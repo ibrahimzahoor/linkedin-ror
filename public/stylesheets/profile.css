@@ -134,8 +134,10 @@ margin: 18px 0px 0px 0px;
 
 
 
-.commentview {
-display: table-caption;
+.commentview 
+{
+	display: table-caption;
+	width:  350px;
 }
 
 
@@ -463,7 +465,7 @@ margin-top: 38px;
 margin-right: -449px;
 margin-left: 186px;
 margin-bottom: 0px;
-padding-bottom: 42px;
+padding-bottom: 80px;
 }
 
 .result .bd {

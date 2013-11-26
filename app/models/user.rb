@@ -65,6 +65,8 @@ class User < ActiveRecord::Base
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
+        user.userfname = data["first_name"] if user.userfname.blank?
+        user.userlname = data["last_name"] if user.userlname.blank?
       end
     end
   end

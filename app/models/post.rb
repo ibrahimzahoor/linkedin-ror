@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
 
 	has_many :comments
 
-  attr_accessible :content, :user_id , :image , :public , :post_id
+  attr_accessible :content, :user_id , :image , :public , :post_id  , :linkdescription
 
   mount_uploader :image, ImageUploader
 

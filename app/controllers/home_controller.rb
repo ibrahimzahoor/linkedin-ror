@@ -17,6 +17,8 @@ class HomeController < ApplicationController
   def secure
   end
 
+    
+
   def agreement
   end
 

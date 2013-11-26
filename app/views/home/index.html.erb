@@ -2,8 +2,10 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
 <link rel="stylesheet" type="text/css" href="/stylesheets/new-feed.css">
 <link rel="stylesheet" type="text/css" href="/stylesheets/profile.css">
-
-<script src="/javascripts/home.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/liveurl.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" > </script>
+  <script src="/javascripts/jquery.liveurl.js"> </script>
+  <script src="/javascripts/home.js"></script>
 	
 	<% provide(:title, 'Welcome!') %>
 	
@@ -24,10 +26,42 @@
               <%= f.file_field :image , :class=>"post aselect" %>
             </div>
           </div>
+          <div class="liveurl-loader"></div>
+          <div class="liveurlparent">
+              <div class="liveurl">
+                  <div class="close" title="Entfernen"></div>
+                  <div class="inner">
+                      <div class="image"> </div>
+                      <div class="details">
+                          <div class="info">
+                              <div class="title"> </div>
+                              <div class="description"> </div> 
+                              <div class="url"></div>
+                          </div>
+
+                          <div class="thumbnail">
+                              <div class="pictures">
+                                  <div class="controls">
+                                      <div class="prev button inactive"></div>
+                                      <div class="next button inactive"></div>
+                                      <div class="count">
+                                          <span class="current">0</span><span> von </span><span class="max">0</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="video"></div>
+                      </div>
+
+                  </div>
+              </div>
+            </div>
 
           <%= f.select(:public, ['Public', 'Connections',],{}, :class => "post_public bselect") %>
                   
-          <%= f.submit "Share", :class => "acceptaaa" %>
+          <%= f.hidden_field :linkdescription, :id => "link_details" %>
+ 
+          <%= f.submit "Share", :onclick => "return validat_link();"  , class: "accept" %>
 
         <% end %>
             
@@ -35,6 +69,7 @@
       <ol class="microposts">
         <%= render 'posts' %>
       </ol>
+      <script src="/javascripts/liveurl1.js"> </script>
   </div>
 
     

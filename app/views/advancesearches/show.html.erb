@@ -36,9 +36,9 @@
                   </a>
                   <div class="bd">
                     <h3>
-                      <a class="title" href="#">
-                        <strong class="highlight">  <%= user.userfname %></strong> <strong class="highlight"><%= user.userlname %></strong>
-                      </a>
+                      <strong>
+                      <%= link_to user.userfname+" "+user.userlname , user ,:class=> "title" %>
+                      </strong>
                     </h3>
                     <p class="description"><%= user.jobtitle %> at <%= user.company %><%= user.university %></p>
                     <dl class="demographic"><dt>Location</dt><dd><%= user.country %></dd></dl>

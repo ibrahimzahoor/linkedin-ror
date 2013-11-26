@@ -78,7 +78,7 @@
     text-indent:-999px;
     width: 16px;
     height: 16px;
-    background:url(close.gif);
+    background:url("../images/close.gif");
 }
 
 .liveurl .thumbnail {
@@ -165,7 +165,7 @@
     width: 16px;
     height: 11px;
     margin: 10px 0;
-    background: url(url-loader.gif);
+    background: url("../images/url-loader.gif");
     
 }
 
