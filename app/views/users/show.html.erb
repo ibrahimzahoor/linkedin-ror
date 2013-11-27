@@ -141,7 +141,7 @@
                 <li>      
                   <h1><%= link_to @user.userfname + " " + @user.userlname , @user , :class=>""%></h1> 
                       </br>
-                  <span class="content"><%= strip_tags(post.content) %></span>
+                  <span class="content"><%= post.content %></span>
 
                   <% if post.linkdescription != "" %>
                          <!--<div class="urldescription"></div>
@@ -204,7 +204,7 @@
                   <% elsif current_user == @user  %>
                     <li>
                       <%= link_to @user.userfname + " " + @user.userlname , @user , :class=>"name_style"%> 
-                      <span class="content"><%= strip_tags(post.content) %></span>
+                      <span class="content"><%= post.content %></span>
  
                        <% if post.linkdescription != "" %>
                          <!--<div class="urldescription"></div>
@@ -260,7 +260,7 @@
                   <% elsif post.public == "Public" %>                
                     <li>
                       <%= link_to @user.userfname + " " + @user.userlname , @user , :class=>"name_style"%> 
-                      <span class="content"><%= strip_tags(post.content) %></span>
+                      <span class="content"><%= post.content %></span>
                       <% if post.linkdescription != "" %>
                          <!--<div class="urldescription"></div>
                          <script type="text/javascript">

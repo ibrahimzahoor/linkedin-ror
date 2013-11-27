@@ -3,7 +3,7 @@
                 <% if current_user.friend_with? post.user %>
                   <li>
                       <%= link_to post.user.userfname + " " + post.user.userlname , post.user , :class=>"name_style"%> 
-                      <span class="content"><%= strip_tags(post.content) %></span>
+                      <span class="content"><%= post.content %></span>
 
                       <% if post.linkdescription != "" %>
                          <!--<div class="urldescription"></div>
@@ -59,7 +59,7 @@
                  <% elsif current_user == post.user  %>
                   <li>
                       <%= link_to post.user.userfname + " " + post.user.userlname , post.user , :class=>"name_style"%> 
-                      <span class="content"><%= strip_tags(post.content) %></span>
+                      <span class="content"><%= post.content %></span>
 
                       <% if post.linkdescription != "" %>
                          <!--<div class="urldescription"></div>
@@ -115,7 +115,7 @@
                 <% elsif post.public=="Public" %>
                 <li>
                       <%= link_to post.user.userfname + " " + post.user.userlname , @user , :class=>"name_style"%> 
-                      <span class="content"><%= strip_tags(post.content) %></span>
+                      <span class="content"><%= post.content %></span>
 
                       <% if post.linkdescription != "" %>
                          <!--<div class="urldescription"></div>
