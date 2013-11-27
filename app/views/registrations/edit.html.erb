@@ -1,0 +1,328 @@
+
+<link href="/stylesheets/join.css" rel="stylesheet">
+<link href="/stylesheets/signup1.css" rel="stylesheet">
+<script src="/javascripts/signup1.js"></script>
+
+<% provide(:title, 'Build Your Profile') %>
+<div id="header" class="member">
+		<div class="wrapper">
+			<div id="nav-primary">
+				<div class="wrapper">
+					<div class="logo" id="logo-linkedin">
+						<img src="/images/logo_linkedin_92x22.png" width="92" height="22" alt="LinkedIn">
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+	
+	<div id="body">
+		<div class="wrapper">
+			<div id="global-error">
+			</div>
+			<div id="main" class="establish-profile nostatus">
+				<div class="progress-container">
+					<h1><strong><%= current_user.userfname %></strong>, let's start creating your professional profile</h1>
+				</div>
+
+				<%= devise_error_messages! %>
+				
+				<div id="register-global-error"></div>
+				<div id="motivation" class="motivation">
+					<div class="profile-features">
+						<h3>A LinkedIn profile helps you...</h3>
+						<ul>
+							<li class="first">Showcase your skills and experience</li>
+							<li>Be found for new opportunities</li>
+							<li>Stay in touch with colleagues and friends</li>
+						</ul>
+					</div>
+				</div>
+          
+				<div>
+					
+    				<%= form_for(resource, :as => resource_name , :url => registration_path(resource_name),:html => {:multipart => true, :method => :put ,:class=>"standard-form sided employed stacked-form" }) do |f| %>
+						
+						<ul class="infoList">
+							<li class="country required location">
+								<label for="countryCode-location-employedProfileForm" class="hidden-el">
+									<abbr title="This is a required field."><em>*</em></abbr>Country
+								</label>
+								
+								<div class="fieldgroup">
+									<span class="error" id="countryCode-location-employedProfileForm-error"></span>
+									
+									<%= f.select(:country, options_for_select(['United States', 'Afghanistan', 'Aland Islands', 'Albania', 'Algeria', 'American Samoa'  'Andorra', 'Angola', 'Anguilla', 'Antarctica', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'British Indian Ocean Territory', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Caribbean Nations', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Cocos (Keeling) Islands', 'Colombia', 'Comoros', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote D\'Ivoire (Ivory Coast)', 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Democratic Republic of the Congo', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'East Timor', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Falkland Islands (Malvinas)', 'Faroe Islands', 'Federated States of Micronesia', 'Fiji', 'Finland', 'France', 'French Guiana', 'French Polynesia', 'French Southern Territories', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guadeloupe', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Isle of Man', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jersey', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Korea', 'Korea (North)', 'Kosovo', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macao', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'Netherlands Antilles', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Niue', 'Norfolk Island', 'Northern Mariana Islands', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Palestinian Territory', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'Reunion', 'Romania', 'Russian Federation', 'Rwanda', 'Saint Helena', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Pierre and Miquelon', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovak Republic', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Svalbard and Jan Mayen', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Timor-Leste', 'Togo', 'Tokelau', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks and Caicos Islands', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican City State (Holy See)', 'Venezuela', 'Vietnam', 'Virgin Islands (British)', 'Virgin Islands (U.S.)', 'Wallis and Futuna', 'Western Sahara', 'Yemen', 'Zambia', 'Zimbabwe', 'Other'], 'Pakistan'), {}, {:class => 'country-select', :id => 'countryCode-location-employedProfileForm', :selected_key => 'Pakistan'})%>
+
+	
+
+<!--
+									<option value="us">United States</option><option value="af">Afghanistan</option><option value="ax">Aland Islands</option><option value="al">Albania</option><option value="dz">Algeria</option><option value="as">American Samoa</option><option value="ad">Andorra</option><option value="ao">Angola</option><option value="ai">Anguilla</option><option value="aq">Antarctica</option><option value="ag">Antigua and Barbuda</option><option value="ar">Argentina</option><option value="am">Armenia</option><option value="aw">Aruba</option><option value="au">Australia</option><option value="at">Austria</option><option value="az">Azerbaijan</option><option value="bs">Bahamas</option><option value="bh">Bahrain</option><option value="bd">Bangladesh</option><option value="bb">Barbados</option><option value="by">Belarus</option><option value="be">Belgium</option><option value="bz">Belize</option><option value="bj">Benin</option><option value="bm">Bermuda</option><option value="bt">Bhutan</option><option value="bo">Bolivia</option><option value="ba">Bosnia and Herzegovina</option><option value="bw">Botswana</option><option value="br">Brazil</option><option value="io">British Indian Ocean Territory</option><option value="bn">Brunei Darussalam</option><option value="bg">Bulgaria</option><option value="bf">Burkina Faso</option><option value="bi">Burundi</option><option value="kh">Cambodia</option><option value="cm">Cameroon</option><option value="ca">Canada</option><option value="cv">Cape Verde</option><option value="cb">Caribbean Nations</option><option value="ky">Cayman Islands</option><option value="cf">Central African Republic</option><option value="td">Chad</option><option value="cl">Chile</option><option value="cn">China</option><option value="cx">Christmas Island</option><option value="cc">Cocos (Keeling) Islands</option><option value="co">Colombia</option><option value="km">Comoros</option><option value="cg">Congo</option><option value="ck">Cook Islands</option><option value="cr">Costa Rica</option><option value="ci">Cote D'Ivoire (Ivory Coast)</option><option value="hr">Croatia</option><option value="cu">Cuba</option><option value="cy">Cyprus</option><option value="cz">Czech Republic</option><option value="cd">Democratic Republic of the Congo</option><option value="dk">Denmark</option><option value="dj">Djibouti</option><option value="dm">Dominica</option><option value="do">Dominican Republic</option><option value="tp">East Timor</option><option value="ec">Ecuador</option><option value="eg">Egypt</option><option value="sv">El Salvador</option><option value="gq">Equatorial Guinea</option><option value="er">Eritrea</option><option value="ee">Estonia</option><option value="et">Ethiopia</option><option value="fk">Falkland Islands (Malvinas)</option><option value="fo">Faroe Islands</option><option value="fm">Federated States of Micronesia</option><option value="fj">Fiji</option><option value="fi">Finland</option><option value="fr">France</option><option value="gf">French Guiana</option><option value="pf">French Polynesia</option><option value="tf">French Southern Territories</option><option value="ga">Gabon</option><option value="gm">Gambia</option><option value="ge">Georgia</option><option value="de">Germany</option><option value="gh">Ghana</option><option value="gi">Gibraltar</option><option value="gr">Greece</option><option value="gl">Greenland</option><option value="gd">Grenada</option><option value="gp">Guadeloupe</option><option value="gu">Guam</option><option value="gt">Guatemala</option><option value="gg">Guernsey</option><option value="gn">Guinea</option><option value="gw">Guinea-Bissau</option><option value="gy">Guyana</option><option value="ht">Haiti</option><option value="hn">Honduras</option><option value="hk">Hong Kong</option><option value="hu">Hungary</option><option value="is">Iceland</option><option value="in">India</option><option value="id">Indonesia</option><option value="ir">Iran</option><option value="iq">Iraq</option><option value="ie">Ireland</option><option value="im">Isle of Man</option><option value="il">Israel</option><option value="it">Italy</option><option value="jm">Jamaica</option><option value="jp">Japan</option><option value="je">Jersey</option><option value="jo">Jordan</option><option value="kz">Kazakhstan</option><option value="ke">Kenya</option><option value="ki">Kiribati</option><option value="kr">Korea</option><option value="kp">Korea (North)</option><option value="ko">Kosovo</option><option value="kw">Kuwait</option><option value="kg">Kyrgyzstan</option><option value="la">Laos</option><option value="lv">Latvia</option><option value="lb">Lebanon</option><option value="ls">Lesotho</option><option value="lr">Liberia</option><option value="ly">Libya</option><option value="li">Liechtenstein</option><option value="lt">Lithuania</option><option value="lu">Luxembourg</option><option value="mo">Macao</option><option value="mk">Macedonia</option><option value="mg">Madagascar</option><option value="mw">Malawi</option><option value="my">Malaysia</option><option value="mv">Maldives</option><option value="ml">Mali</option><option value="mt">Malta</option><option value="mh">Marshall Islands</option><option value="mq">Martinique</option><option value="mr">Mauritania</option><option value="mu">Mauritius</option><option value="yt">Mayotte</option><option value="mx">Mexico</option><option value="md">Moldova</option><option value="mc">Monaco</option><option value="mn">Mongolia</option><option value="me">Montenegro</option><option value="ms">Montserrat</option><option value="ma">Morocco</option><option value="mz">Mozambique</option><option value="mm">Myanmar</option><option value="na">Namibia</option><option value="nr">Nauru</option><option value="np">Nepal</option><option value="nl">Netherlands</option><option value="an">Netherlands Antilles</option><option value="nc">New Caledonia</option><option value="nz">New Zealand</option><option value="ni">Nicaragua</option><option value="ne">Niger</option><option value="ng">Nigeria</option><option value="nu">Niue</option><option value="nf">Norfolk Island</option><option value="mp">Northern Mariana Islands</option><option value="no">Norway</option><option value="om">Oman</option><option value="pk" selected>Pakistan</option><option value="pw">Palau</option><option value="ps">Palestinian Territory</option><option value="pa">Panama</option><option value="pg">Papua New Guinea</option><option value="py">Paraguay</option><option value="pe">Peru</option><option value="ph">Philippines</option><option value="pn">Pitcairn</option><option value="pl">Poland</option><option value="pt">Portugal</option><option value="pr">Puerto Rico</option><option value="qa">Qatar</option><option value="re">Reunion</option><option value="ro">Romania</option><option value="ru">Russian Federation</option><option value="rw">Rwanda</option><option value="sh">Saint Helena</option><option value="kn">Saint Kitts and Nevis</option><option value="lc">Saint Lucia</option><option value="pm">Saint Pierre and Miquelon</option><option value="vc">Saint Vincent and the Grenadines</option><option value="ws">Samoa</option><option value="sm">San Marino</option><option value="st">Sao Tome and Principe</option><option value="sa">Saudi Arabia</option><option value="sn">Senegal</option><option value="rs">Serbia</option><option value="sc">Seychelles</option><option value="sl">Sierra Leone</option><option value="sg">Singapore</option><option value="sk">Slovak Republic</option><option value="si">Slovenia</option><option value="sb">Solomon Islands</option><option value="so">Somalia</option><option value="za">South Africa</option><option value="es">Spain</option><option value="lk">Sri Lanka</option><option value="sd">Sudan</option><option value="sr">Suriname</option><option value="sj">Svalbard and Jan Mayen</option><option value="sz">Swaziland</option><option value="se">Sweden</option><option value="ch">Switzerland</option><option value="sy">Syria</option><option value="tw">Taiwan</option><option value="tj">Tajikistan</option><option value="tz">Tanzania</option><option value="th">Thailand</option><option value="tl">Timor-Leste</option><option value="tg">Togo</option><option value="tk">Tokelau</option><option value="to">Tonga</option><option value="tt">Trinidad and Tobago</option><option value="tn">Tunisia</option><option value="tr">Turkey</option><option value="tm">Turkmenistan</option><option value="tc">Turks and Caicos Islands</option><option value="tv">Tuvalu</option><option value="ug">Uganda</option><option value="ua">Ukraine</option><option value="ae">United Arab Emirates</option><option value="gb">United Kingdom</option><option value="uy">Uruguay</option><option value="uz">Uzbekistan</option><option value="vu">Vanuatu</option><option value="va">Vatican City State (Holy See)</option><option value="ve">Venezuela</option><option value="vn">Vietnam</option><option value="vg">Virgin Islands (British)</option><option value="vi">Virgin Islands (U.S.)</option><option value="wf">Wallis and Futuna</option><option value="eh">Western Sahara</option><option value="ye">Yemen</option><option value="zm">Zambia</option><option value="zw">Zimbabwe</option><option value="oo">Other</option></select> -->
+								</div>
+							</li>
+							
+							<li class="postal-code">
+								<label for="postalCode-location-employedProfileForm" >
+									<abbr title="This is a required field."><em></em></abbr><span>Postal Code</span>
+								</label>
+
+								<div class="fieldgroup">
+									<span class="error" id="postalCode-location-employedProfileForm-error"></span>
+									<%= f.text_field :postelcode ,:class=>"text-input" %>
+								</div>
+								
+								<p class="example">
+									<span class="code">e.g. 94043</span>
+								</p>
+							</li>
+							
+							<li id="status-chooser-container" class="status-chooser-container">
+					         	<fieldset>
+					            	<legend class="status-chooser-legend"><span>I am currently:</span></legend>
+					            	<ul>
+					            		<li class="employed"><label for="employed-btn">
+					                		<input type="radio" name="status-chooser" value="employed" class="status" id="employed-btn" checked="checked">Employed</label>
+
+
+					                		
+					           			</li>
+					              		<li class="looking">
+					              			<label for="looking-btn">
+					              				<input type="radio" name="status-chooser" value="looking" class="status" id="looking-btn" defaultchecked="true">Job Seeker
+					              			</label>
+					              		</li>
+					              		<li class="student">
+					              			<label for="student-btn">
+					              				<input type="radio" name="status-chooser" value="student" class="status" id="student-btn">Student
+					              			</label>
+					              		</li>
+					            	</ul>
+					        	</fieldset>
+					        </li>
+							
+							<li id="job1" class="job-title required" >
+								<label for="workCompanyTitle-employedProfileForm" >
+									<abbr title="This is a required field."><em>*</em></abbr>Job title
+								</label>
+          
+								<div class="fieldgroup">
+									<span class="error" id="workCompanyTitle-employedProfileForm-error"></span>
+									<%= f.text_field :jobtitle ,:class=>"text-input" ,:id=>"workCompanyTitle-employedProfileForm" %>
+								</div>
+							</li>
+
+							<li id="job2" class="job-title required">
+          						<label for="workCompanyTitle-lookingProfileForm">
+            						<abbr title="This is a required field."><em>*</em></abbr>Most recent job title
+          						</label>
+						        
+						        <div class="fieldgroup">
+						        	<span class="error" id="workCompanyTitle-lookingProfileForm-error"></span>
+						            
+
+						            <%= f.text_field :company ,:class=>"text-input" ,:id=>"workCompanyTitle-lookingProfileForm" %>
+
+						        </div>
+						    </li>
+
+							<li  id="self"  class="self-employed">
+								<div class="fieldgroup">
+								  <span class="error" id="selfEmployed-employeeCompany-employedProfileForm-error"></span>
+								  <input type="checkbox" name="selfEmployed"  id="selfcheck" class="selfself">
+								  <label for="selfEmployed-employeeCompany-employedProfileForm" >I am self-employed</label>
+								</div>
+							</li>
+
+
+
+							<li id="company1" class="company required">
+								<label for="companyName-companyInfo-employeeCompany-employedProfileForm" >
+									<abbr title="This is a required field."><em>*</em></abbr>Company
+								</label>
+								
+								<div id="employedProfileForm_company_ta" class="fieldgroup">
+									<span class="error" id="companyName-companyInfo-employeeCompany-employedProfileForm-error"></span>
+									<%= f.text_field :company ,:class=>"text-input" ,:id=>"companyName-companyInfo-employeeCompany-employedProfileForm" %>
+								</div>
+							</li>
+
+
+							<li id="company2" class="company required">
+								<label for="companyName-companyInfo-employeeCompany-employedProfileForm" >
+									<abbr title="This is a required field."><em>*</em></abbr>Most Recent Company
+								</label>
+								
+								<div id="employedProfileForm_company_ta" class="fieldgroup">
+									<span class="error" id="companyName-companyInfo-employeeCompany-employedProfileForm-error"></span>
+									<%= f.text_field :company ,:class=>"text-input" ,:id=>"companyName-companyInfo-employeeCompany-employedProfileForm" %>
+								</div>
+							</li>
+
+							<li id="employedProfileForm_industry" class="industry required">
+								<label for="industryChooser-employeeCompany-employedProfileForm" >
+									<abbr title="This is a required field."><em>*</em></abbr>Industry:
+								</label>
+								
+								<div class="fieldgroup">
+									<span class="error" id="industryChooser-employeeCompany-employedProfileForm-error"></span>
+									<%= f.select(:industry, ['', 'Accounting', 'Airlines/Aviation', 'Alternative Dispute Resolution', 'Alternative Medicine', 'Animation', 'Apparel &amp; Fashion', 'Architecture &amp; Planning', 'Arts and Crafts', 'Automotive', 'Aviation &amp; Aerospace', 'Banking', 'Biotechnology', 'Broadcast Media', 'Building Materials', 'Business Supplies and Equipment', 'Capital Markets', 'Chemicals', 'Civic &amp; Social Organization', 'Civil Engineering', 'Commercial Real Estate', 'Computer &amp; Network Security', 'Computer Games', 'Computer Hardware', 'Computer Networking', 'Computer Software', 'Construction', 'Consumer Electronics', 'Consumer Goods', 'Consumer Services', 'Cosmetics', 'Dairy', 'Defense &amp; Space', 'Design', 'Education Management', 'E-Learning', 'Electrical/Electronic Manufacturing', 'Entertainment', 'Environmental Services', 'Events Services', 'Executive Office', 'Facilities Services', 'Farming', 'Financial Services', 'Fine Art', 'Fishery', 'Food &amp; Beverages', 'Food Production', 'Fund-Raising', 'Furniture', 'Gambling &amp; Casinos', 'Glass, Ceramics &amp; Concrete', 'Government Administration', 'Government Relations', 'Graphic Design', 'Health, Wellness and Fitness', 'Higher Education', 'Hospital &amp; Health Care', 'Hospitality', 'Human Resources', 'Import and Export', 'Individual &amp; Family Services', 'Industrial Automation', 'Information Services', 'Information Technology and Services', 'Insurance', 'International Affairs', 'International Trade and Development', 'Internet', 'Investment Banking', 'Investment Management', 'Judiciary', 'Law Enforcement', 'Law Practice', 'Legal Services', 'Legislative Office', 'Leisure, Travel &amp; Tourism', 'Libraries', 'Logistics and Supply Chain', 'Luxury Goods &amp; Jewelry', 'Machinery', 'Management Consulting', 'Maritime', 'Marketing and Advertising', 'Market Research', 'Mechanical or Industrial Engineering', 'Media Production', 'Medical Devices', 'Medical Practice', 'Mental Health Care', 'Military', 'Mining &amp; Metals', 'Motion Pictures and Film', 'Museums and Institutions', 'Music', 'Nanotechnology', 'Newspapers', 'Nonprofit Organization Management', 'Oil &amp; Energy', 'Online Media', 'Outsourcing/Offshoring', 'Package/Freight Delivery', 'Packaging and Containers', 'Paper &amp; Forest Products', 'Performing Arts', 'Pharmaceuticals', 'Philanthropy', 'Photography', 'Plastics', 'Political Organization', 'Primary/Secondary Education', 'Printing', 'Professional Training &amp; Coaching', 'Program Development', 'Public Policy', 'Public Relations and Communications', 'Public Safety', 'Publishing', 'Railroad Manufacture', 'Ranching', 'Real Estate', 'Recreational Facilities and Services', 'Religious Institutions', 'Renewables &amp; Environment', 'Research', 'Restaurants', 'Retail', 'Security and Investigations', 'Semiconductors', 'Shipbuilding', 'Sporting Goods', 'Sports', 'Staffing and Recruiting', 'Supermarkets', 'Telecommunications', 'Textiles', 'Think Tanks', 'Tobacco', 'Translation and Localization', 'Transportation/Trucking/Railroad', 'Utilities', 'Venture Capital &amp; Private Equity', 'Veterinary', 'Warehousing', 'Wholesale', 'Wine and Spirits', 'Wireless', 'Writing and Editing'], {}, {:id => 'industryChooser-employeeCompany-employedProfileForm'})%>
+								</div>
+							</li>
+
+							<li id="daterange1" class="previous-daterange required">
+								<fieldset>
+									<legend class="hidden-el">
+										<span>
+											<abbr title="This is a required field."><em>*</em></abbr>Time period
+										</span>
+									</legend>
+
+									<p>
+										<span class="error" id="startYear-previousStartEnd-lookingProfileForm-error"></span>
+										<span class="error" id="endYear-previousStartEnd-lookingProfileForm-error"></span>
+									</p>
+
+									<ul>
+										<li class="start-year-entry">
+											<%= f.select(:timepperiodfrom, ['', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005', '2004', '2003', '2002', '2001', '2000', '1999', '1998', '1997', '1996', '1995', '1994', '1993', '1992', '1991', '1990', '1989', '1988', '1987', '1986', '1985', '1984', '1983', '1982', '1981', '1980', '1979', '1978', '1977', '1976', '1975', '1974', '1973', '1972', '1971', '1970', '1969', '1968', '1967', '1966', '1965', '1964', '1963', '1962', '1961', '1960', '1959', '1958', '1957', '1956', '1955', '1954', '1953', '1952', '1951'], {}, {:id => 'startYear-previousStartEnd-lookingProfileForm'})%>
+										</li>
+              
+										<li class="end-year-entry">
+											<label for="endYear-previousStartEnd-lookingProfileForm" class="to">to</label>
+											<%= f.select(:timeperiodto, ['', 'Present', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005', '2004', '2003', '2002', '2001', '2000', '1999', '1998', '1997', '1996', '1995', '1994', '1993', '1992', '1991', '1990', '1989', '1988', '1987', '1986', '1985', '1984', '1983', '1982', '1981', '1980', '1979', '1978', '1977', '1976', '1975', '1974', '1973', '1972', '1971', '1970', '1969', '1968', '1967', '1966', '1965', '1964', '1963', '1962', '1961', '1960', '1959', '1958', '1957', '1956', '1955', '1954', '1953', '1952', '1951'], {}, {:id => 'endYear-previousStartEnd-lookingProfileForm'})%>
+										</li>
+									</ul>
+								</fieldset>
+							</li>
+							<li id="education" class="education typeahead required">
+								<label for="schoolText-school-education-studentProfileForm" >
+									<abbr title="This is a required field."><em>*</em></abbr>School/University
+								</label>
+                
+								<div id="studentProfileForm_school_ta" class="fieldgroup">
+									<span class="error" id="schoolText-school-education-studentProfileForm-error"></span>
+									<%= f.text_field :university ,:class=>"text-input" ,:id=>"schoolText-school-education-studentProfileForm" %>
+								</div>
+							</li>
+
+							<li id="daterange2" class="previous-daterange required">
+								<fieldset>
+									<legend class="">
+										<span>
+											<abbr title="This is a required field."><em>*</em></abbr>Dates attended
+										</span>
+									</legend>
+
+									<p>
+										<span class="error" id="startYear-startEndYear-education-studentProfileForm-error"></span>
+										<span class="error" id="endYear-startEndYear-education-studentProfileForm-error"></span>
+									</p>
+
+									<ul>
+										<li class="start-year-entry">
+											<%= f.select(:universityStart, ['', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005', '2004', '2003', '2002', '2001', '2000', '1999', '1998', '1997', '1996', '1995', '1994', '1993'], {}, {:id => 'startYear-startEndYear-education-studentProfileForm'})%>
+										</li>
+             
+										<li class="end-year-entry">
+											<label for="endYear-startEndYear-education-studentProfileForm" class="to">to</label>
+											<%= f.select(:universityEnd, ['', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005', '2004', '2003', '2002', '2001', '2000', '1999', '1998', '1997', '1996', '1995', '1994', '1993'], {}, {:id => 'endYear-startEndYear-education-studentProfileForm'})%>
+										</li>
+									</ul>
+								</fieldset>
+								
+								<p class="tip">Current students: enter your expected graduation year</p>
+							</li>
+
+							<li id="age" class="required">
+								<fieldset>
+									<legend>
+										<span><abbr title="This is a required field."><em>*</em></abbr> Age</span>
+									</legend>
+									<ul>
+										<li class="over-eighteen">
+											<input type="checkbox" name="ageOverEighteen" value="true" checked id="ageOverEighteen-studentAgeBirthday-studentProfileForm" ><label for="ageOverEighteen-studentAgeBirthday-studentProfileForm" >I am 18 or older.</label>
+											<span class="info"></span>
+											
+										</li>
+										
+										
+										<li class="dob-chooser-error">
+											<span class="error" id="studentAgeBirthday-studentProfileForm-error"></span>
+										</li>
+										
+										<li class="dob-chooser" style="display: list-item;">
+                								<p class="instruction">Please provide your date of birth</p>
+												<span class="error" id="birthMonth-studentAgeBirthday-studentProfileForm-error"></span>
+                  								<%= f.date_select(:dob, :order=>[:month, :day, :year], :include_blank => true, :start_year => Time.now.year-108, :end_year => Time.now.year) %>
+              							</li>
+
+									</ul>
+								</fieldset>
+
+							</li>
+
+								<ul>
+
+										<li>
+											<div class="clearfix">			
+												<%= f.label :image %>
+												<div class="input">
+													<%= f.file_field :image %>
+												</div>
+											</div>
+
+              								<div class="clearfix">			
+												<%= f.label :new_password, :for => "user_password" %>
+												<div class="input">
+													<%= f.password_field :password ,:class=>"text-input" %>
+												</div>
+											</div>
+
+											<div class="clearfix">
+												<%= f.label :confirm, :for => "user_password_confirmation" %>
+												<div class="input">
+													<%= f.password_field :password_confirmation ,:class=>"text-input" %>
+												</div>
+											</div>
+
+											<div class="clearfix">
+												<%= f.label :current_password %> 
+												<div class="input">
+													<%= f.password_field :current_password ,:class=>"text-input" %>
+											  </div>
+											</div>
+										</li>
+								</ul>
+
+						</ul>
+
+						
+
+						<p class="actions">
+							<span>
+								
+
+								<%= f.submit "Create my profile", :class => "btn-primary"  %>
+
+							</span>
+						</p>
+
+						<p class="key"><strong>*</strong> Indicates required field.</p>
+					<%end%>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<div class="wrapper">
+			<div id="legal">
+				<p id="copyright">LinkedIn Corporation &copy; 2013</p>
+				<p id="terms-of-use">Commercial use of this site without express authorization is prohibited.</p>
+			</div>
+		</div>
+	</div>
+
+<!-- **************************************************************************8  -->
+
+

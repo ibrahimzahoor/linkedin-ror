@@ -1,0 +1,551 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+header, footer, section, aside, hgroup, nav, ul, div{
+	display: block;
+}
+
+body{
+	overflow: scroll;
+	font-family: arial;
+	font-style: normal;
+	background: #e9e9e9;
+	font-size: 62.5%;
+	line-height: 1.2;
+	color: #000;
+}
+
+a{
+	color: #069;
+	text-decoration:none;
+}
+
+ol, ul{
+	list-style: none;
+	display: block;
+}
+
+img{
+	border: none;
+}
+
+
+div#alumni{
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 13px;
+	color: #333;
+	width: 974px;
+}
+
+
+div#edu_header{
+	background: #fff;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15),-1px 0 0 rgba(0,0,0,0.03),1px 0 0 rgba(0,0,0,0.03),0 1px 0 rgba(0,0,0,0.12);
+	float: left;
+	width: 974px;
+	margin-top: 20px;
+	height: 80px;
+	margin-top: 30px;
+}
+
+
+div#edu_header>h2{
+	padding: 28px 20px;
+}
+
+
+div#dates_bar{
+	background-color: #444;
+	vertical-align: middle;
+	height: 34px;
+	line-height: 34px;
+	color: #ccc;
+	clear: both;
+}
+
+
+div#select_wrapper{
+	float: left;
+	height: 28px;
+	margin-top: 5px;
+}
+
+
+div#action_menu{
+	margin-left: 13px;
+	color: #ccc;
+	display: inline-block;
+	cursor: default;
+	line-height: 20px;
+	position: relative;
+}
+
+
+.label{
+	float: left;
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 5px;
+	padding: 2px 10px;
+}
+
+
+.label:hover{
+	background-color: #666;
+}
+
+
+.label:hover #drop_down_arrow{
+	background-position: 2px -1921px;
+}
+
+
+#drop_down_arrow{
+	background: url('/images/sprite_global_v8.png') no-repeat scroll 2px -1605px transparent;
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+
+select#date_type{
+	font-size: 100%;
+	position: absolute;
+	left: -9999em;
+}
+
+
+ul#date_type_dropdown{
+	top: 24px;
+	left: 0;
+	border: 1px solid #aaa;
+	box-shadow: 2px 6px 10px #666;
+	cursor: pointer;
+	display: none;
+	position: absolute;
+	background: #fff;
+	z-index: 4;
+}
+
+
+ul#date_type_dropdown>li{
+	color: #666;
+	padding: 0 10px 0 10px;
+	line-height: 35px;
+}
+
+
+ul#date_type_dropdown>li:hover{
+	background-color: #666;
+	color: #fff;
+}
+
+
+span.date_dropdown{
+	display: block;
+	float: left;
+	margin-left: 5px;
+}
+
+
+span#dates_separator{
+	margin: 0 5px 0 5px;
+	color: #b5b5b5;
+}
+
+
+span#graduated{
+	margin-top: 7px;
+	display: none;
+}
+
+
+#school_start_date{
+	display: none;
+}
+
+#school_end_date{
+	display: none;
+}
+
+
+span#no_date_wrapper{
+	display: inline-block;
+	margin-left: 15px;
+}
+
+
+#no_date{
+	margin: 0 3px 0 0;
+}
+
+
+#top_shadow{
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 83%,rgba(0,0,0,0) 95%);
+	background-image: -moz-linear-gradient(top, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 83%,rgba(0,0,0,0) 95%);
+	height: 10px;
+}
+
+
+#custom_search_container{
+	background-color: #efefef;
+	padding-bottom: 17px;
+	border: 1px solid #D1D1D1;
+	border-style: none solid;
+	display: inline-block;
+	width: 973px;
+}
+
+
+#custom_search{
+	margin: 0 4px;
+	position: relative;
+}
+
+
+#custom_options{
+	position: relative;
+	font-size: 0;
+	float: left;
+	margin-left: 23px;
+}
+
+
+.custom_item{
+	display: inline-block;
+	vertical-align: top;
+	width: 286px;
+	margin: 0 0 0 16px;
+	font-size: 13px;
+}
+
+
+.custom_item>h2{
+	margin: 10px 0 2px;
+	font-size: 150%;
+	font-weight: normal;
+	color: #666;
+}
+
+
+.custom_item>ul{
+	margin-top: 6px;
+	padding: 5px 0;
+}
+
+
+.custom_sub_item{
+	display: block;
+	width: 275px;
+	height: 20px;
+	margin-bottom: 12px;
+	border: 1px solid #efefef;
+	position: relative;
+}
+
+
+.custom_sub_item:hover .graph_bar{
+	background-image: -webkit-linear-gradient(top, #9bd4ff 14%,#73abd2 91%,#39627c 100%);
+	background-image: -moz-linear-gradient(top, #9bd4ff 14%,#73abd2 91%,#39627c 100%);
+}
+
+
+.graph_item{
+	border-radius: 5px;
+	display: block;
+	height: 100%;
+	font-size: 100%;
+	line-height: 20px;
+	border-bottom: 1px solid #fff;
+	padding: 3px 0 3px 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 275px;
+}
+
+
+.graph_count{
+	display: block;
+	width: 35px;
+	height: 100%;
+	float: right;
+	padding: 0 5px;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 21px;
+	text-align: right;
+	cursor: pointer;
+	color: #888;
+	text-shadow: 0px 1px #fff;
+}
+
+
+.graph_item{
+	text-shadow: 1px 1px rgba(255,255,255,0.5);
+	cursor: pointer;
+	color: #333;
+	max-height: 20px;
+	display: block;
+	z-index: 3;
+}
+
+
+.graph_item>label{
+	cursor: pointer;
+}
+
+
+.graph_bar{
+	border-radius: 5px 0px 0px 5px;
+	width: 80%;
+	height: 26px;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: 2;
+	background-image: -webkit-linear-gradient(top, #cdebff 16%,#abd0e4 79%,#85aec3 100%);
+	background-image: -moz-linear-gradient(top, #cdebff 16%,#abd0e4 79%,#85aec3 100%);
+}
+
+
+.big_bar{
+	background-color: #e6e6e6;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 26px;
+	width: 285px;
+	z-index: 1;
+}
+
+
+#status_bar{
+	background-color: #FFF;
+	position: relative;
+	padding: 2% 1.2% 4.2%;
+	border: 1px solid #D1D1D1;
+	border-top: 5px solid #dfdfdf;
+	border-style: solid solid none;
+}
+
+
+#status_arrow{
+	width: 0;
+	height: 0;
+	border-left: 11px solid transparent;
+	border-right: 11px solid transparent;
+	border-top: 11px solid #dfdfdf;
+	position: absolute;
+	top: 0px;
+	left: 25px;
+}
+
+
+#results_wrapper{
+	float: left;
+	font-size: 135%;
+}
+
+
+#hide_connections_wrapper{
+	color: #454545;
+	font-size: 13px;
+	margin-left: 10px;
+}
+
+
+#hide_my_connections{
+	margin-left: 0px;
+	margin-right: 5px;
+	vertical-align: text-top;
+}
+
+
+#alumni_search_wrapper{
+	display: inline;
+	color: #999;
+	float: right;
+	padding: 0 0 2px 6px;
+	line-height: 20px;
+	height: 20px;
+	min-width: 200px;
+	position: relative;
+}
+
+
+#alumni_keywords{
+	padding: 2px 5px;
+	width: 100%;
+	border: 0;
+	background-color: transparent;
+}
+
+
+#alumni_search_box{
+	position: relative;
+	padding: 0 25px 0 0;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+
+#alumni_search_button{
+	display: block;
+	background: url('/images/img/icons.png') no-repeat scroll;
+	background-position: -5px -829px;
+	text-indent: -9999px;
+	border: 0;
+	width: 20px;
+	height: 17px;
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	cursor: pointer;
+}
+
+
+#alumni_results_container{
+	background: #FFF;
+	font-size: 13px;
+	zoom: 1;
+	position: relative;
+	border: 1px solid #D1D1D1;
+	border-style: none solid solid;
+	padding: 10px 0;
+	overflow: hidden;
+}
+
+
+#people_cards{
+	margin: 0 4px;
+}
+
+
+.person{
+	box-shadow: 0 2px 3px #bbb;
+	width: 48.5%;
+	height: 132px;
+	float: left;
+	margin: 0 0 1.3% 0.9%;
+	min-height: 90px;
+	border: 1px solid #ccc;
+	position: relative;
+}
+
+
+.grad_year{
+	font-family: Georgia,serif;
+	position: absolute;
+	top: -16px;
+	right: 5px;
+	font-size: 100px;
+	line-height: 120px;
+	color: #eee;
+	z-index: 0;
+}
+
+
+.profile_link{
+	position: relative;
+	/*z-index: 5;*/
+	max-width: 300px;
+	max-height: 42px;
+	line-height: 21px;
+	/*overflow: hidden;*/
+}
+
+
+.profile_link>img{
+	float: left;
+	width: 17%;
+	height: 82px;
+	margin: 2.2% 4.2% 2.2% 2.2%;
+	border: none;
+}
+
+
+.details{
+	position: relative;
+	margin-left: 23%;
+	height: 94px;
+	width: 76%;
+}
+
+
+.details>h3{
+	font-family: Georgia,serif;
+	margin: 9px 5px 1px 0;
+	font-size: 135%;
+	font-weight: normal;
+	position: relative;
+	max-width: 300px;
+	max-height: 42px;
+	line-height: 21px;
+}
+
+
+.headline{
+	margin: 0 5px 0 0;
+	color: #000;
+	max-height: 32px;
+}
+
+
+.specifics{
+	margin: 0 5px 0 0px;
+	color: #555;
+	max-width: 340px;
+}
+
+
+.card_footer{
+	clear: both;
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.53, #efefef), color-stop(0.55, #f7f7f7));
+	background-image: -moz-linear-gradient(bottom, #efefef 53%, #f7f7f7 55%);
+	border-top: 1px solid #ddd;
+	height: 28px;
+	line-height: 28px;
+	vertical-align: middle;
+}
+
+
+.connect_logo{
+	background: transparent url('/images/img/error.png') no-repeat scroll 11px -1024px;
+	width: 28px;
+	height: 25px;
+	display: block;
+	float: left;
+}
+
+
+.connect{
+	color: #069;
+	text-decoration: none;
+	text-align: left;
+	padding-right: 11px;
+	font-weight: bold;
+	font-size: 90%;
+}
+
+.connect2{
+	background: none; 
+	border: 0;
+	color: #069;
+	text-decoration: none;
+	text-align: left;
+	padding-right: 11px;
+	font-weight: bold;
+	font-size: 90%;
+	cursor: pointer;
+}
+
+.divider{
+	width: 0;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #fff;
+}

@@ -1,0 +1,92 @@
+  	
+<link href="/stylesheets/default.css" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/main-header.css" rel="stylesheet" type="text/css" />
+	
+	<% provide(:title, 'Worlds Largest Professional Network') %>
+
+	<div id="header" class="global-header responsive-header nav-v5-2-header responsive-1" role="banner">
+		<div id="top-header">
+			<div class="wrapper">
+				<h2 class="logo-container">
+					<a  href="/users/sign_up" class="logo" id="li-logo">LinkedIn Home</a>
+				</h2>
+  
+				<ul class="nav main-nav guest-nav" role="navigation">
+					<li class="nav-item">
+					    <% if user_signed_in? %>  
+			                <%= link_to current_user.userfname, '/home/index' , :class=>"nav-link" %>
+			            <% else %>  
+		              		<%= link_to "What's LinkedIn?", '/home/whatislinkedin' , :class=>"nav-link" %>
+		              	<% end %>
+		            </li>
+					
+					<li class="nav-item">
+					    <% if user_signed_in? %>  
+		          			<%= link_to "Edit Profile", '/users/edit'  , :class=>"nav-link"%> 
+		          		<% else %>  
+			          		<%= link_to "Join Today", '/register'  , :class=>"nav-link"%>
+		                <% end %>
+					</li>
+					
+					<li class="nav-item">
+					    <% if user_signed_in? %>  
+		          			<%= link_to "Sign Out", '/users/sign_out'  , :class=>"nav-link"%> 
+		          		<% else %>  
+			          		<%= link_to "Sign In", '/users/sign_in'  , :class=>"nav-link"%>
+		                <% end %>		 
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+    
+	<div id="body" class="" role="main">
+		<div id="page-title">
+        </div>
+		
+        <div class="wrapper hp-nus-wrapper">
+			<div id="global-error">
+				<div class="alert error">
+					<p><strong id="global"></strong></p>
+				</div>
+			</div>
+		
+		
+			<div id="main" class="signin" >
+				<h2>Change your password</h2>
+
+				<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+				  <%= devise_error_messages! %>
+				  <%= f.hidden_field :reset_password_token %>
+
+				  <div><%= f.label :password, "New password" %><br />
+				  <%= f.password_field :password %></div>
+
+				  <div><%= f.label :password_confirmation, "Confirm new password" %><br />
+				  <%= f.password_field :password_confirmation %></div>
+
+				  <div><%= f.submit "Change my password" %></div>
+				<% end %>
+				
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		<div class="wrapper">
+			<p id="copyright" class="guest"><span>LinkedIn Corporation</span>© 2013</p>
+			
+			<ul id="nav-legal">
+				<li><a href="/home/agreement">User Agreement</a></li>
+				<li><a href="/home/default">Privacy Policy</a></li>
+				<li><a href="/home/default">Community Guidelines</a></li>
+				<li><a href="/home/default">Cookie Policy</a></li>
+				<li class="last"><a href="/home/default">Copyright Policy</a></li>
+			</ul>
+		</div>
+	</div>
+
+</body>
+
+</html>

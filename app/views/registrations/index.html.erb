@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+
+    <div class="actions">
+        <%= link_to 'New User', new_user_path, :class => ["btn","primary"] %>
+    </div>
+
+    <table id="user-table" class="zebra-striped">
+      <tr>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+              </tr>
+    <% end %>
+    </table>
+  </div>
+</div>
+

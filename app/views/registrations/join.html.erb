@@ -1,0 +1,135 @@
+<link href="/stylesheets/main-header.css" rel="stylesheet">
+<link href="/stylesheets/join.css" rel="stylesheet">
+<script src="/javascripts/join.js"></script>
+<% provide(:title, 'Join') %>
+
+
+	<div id="header" class="guest">
+		<div class="wrapper">
+			<div id="nav-primary">
+				<div class="wrapper">
+					<div class="logo" id="logo-linkedin">
+						<img src="images/logo_linkedin_92x22.png" width="92" height="22" alt="LinkedIn">
+					</div>
+                    
+                    <ul class="menu">
+						<li id="nav-primary-auth">
+                            Already on LinkedIn? <%= link_to "users/sign_in" %>
+					  </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    
+    <div id="body">
+		<div class="wrapper">
+
+			
+			<div id="global-error">
+				<div class="alert error">
+					<p><strong id="global">Please correct the marked field(s) below. </strong></p>
+				</div>
+			</div>
+
+			<div id="main" class="join-linkedin cold no-profile fb-reg">
+                <div id="register-global-error"></div>
+
+				<div class="introduction">
+                    <h1>To join LinkedIn, sign up below...it's free!</h1>
+  				</div>
+
+				<div id="content">
+                    <div class="register-container">     
+						<!--<form class="standard-form join-linkedin"> -->
+                    	<div>
+						<%= form_for(resource, :as => resource_name, :validates => true , :url => registration_path(resource_name),:html => {:class=>"standard-form sided" } )  do |f| %>
+
+							<ul id="yui-gen1">
+								<li>
+									<label for="firstName" >First Name:</label>
+									<div class="fieldgroup">
+										<span class="error" id="firstName-error"></span>
+										<%= f.text_field :userfname ,:id => "firstName",:class => "input"  %>
+									</div>
+								</li>
+								<li>
+									<label for="lastName" >Last Name:</label>
+									<div class="fieldgroup">
+										<span class="error" id="lastName-error"></span>
+										
+
+										<%= f.text_field :userlname ,:id => "lastName"  %>
+
+									</div>
+								</li>
+								<li>
+									<label for="email" >Email:</label>
+									<div class="fieldgroup">
+										<span class="error" id="email-error"></span>
+										
+										<%= f.text_field :email , :id=> "email"  %>
+
+									</div>
+								</li>
+								<li class="password-field">
+									<label for="password-coldRegistrationForm" >New Password:</label>
+									<div class="fieldgroup">
+										<span class="error" id="password-error"></span>
+										
+										<%= f.password_field :password , :id => "password" %>
+									</div>
+									<p class="note">6 or more characters</p>
+								</li>
+							</ul>
+			  
+							<p class="actions">
+								
+
+								<%= f.submit "Join LinkedIn" ,:id => "btn-submit" ,:class => "btn-tertiary" %>
+								
+						  <div class="progress-indicator" style="line-height: 23px;"></div>
+                          <abbr title="By clicking Join LinkedIn, you are indicating that you have read, understood, and agree to LinkedIn's User Agreement and Privacy Policy" class="hidden"><em>*</em></abbr>
+                          </p>
+						  	<p id="register-custom-nav" class="key">
+							  Already on LinkedIn? <%= link_to "Sign In" , session_path(resource_name) %>
+							</p>
+			  
+						<%end%>
+					</div>
+  					</div>
+				</div>
+				
+                <div id="extra">
+      				<div class="sign-in-with">
+        				<p class="handwritten">Save time by using your Facebook account to sign up for LinkedIn.</p>
+        				<p class="actions">
+							
+
+							<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) , :class ="fb_button_text" %>
+
+							<abbr title="By clicking Join LinkedIn, you are indicating that you have read, understood, and agree to LinkedIn's User Agreement and Privacy Policy">*</abbr>
+        				</p>
+      				</div>
+				</div>
+			</div>
+			<p id="agreement">
+				* By joining LinkedIn, you agree to LinkedIn's
+				<a target="_blank" href="/home/agreement">User Agreement</a>, 
+				<a target="_blank" href="/home/default">Privacy Policy</a> and 
+				<a target="_blank" href="/home/default">Cookie Policy</a>
+			</p>
+		</div>
+	</div>
+	
+    <div id="footer">
+ 		<div class="wrapper">
+ 			<div id="legal">
+ 				<p id="copyright">LinkedIn Corporation &copy; 2013</p>
+ 				<p id="terms-of-use">
+				 Commercial use of this site without express authorization is prohibited.
+ 				</p>
+ 			</div>
+ 		</div>
+	</div>		

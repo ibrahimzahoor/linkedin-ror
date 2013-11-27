@@ -1,0 +1,368 @@
+
+
+html[Attributes Style] {
+-webkit-locale: en;
+}
+
+body {
+background: #E9E9E9 url('images/texture_grain_200x200_v2.png');
+line-height: 1;
+}
+
+.a11y-skip-nav-container {
+position: relative;
+}
+
+
+
+/*header css */
+
+#header .a11y-content{
+text-indent: -119988px;
+overflow: hidden;
+text-align: left;
+height: 0;
+}
+.global-header {
+	background: #333;
+	background-image: -webkit-linear-gradient(top, #555555 0%,#515151 18%,#373737 85%,#333333 100%);
+	background-image: -moz-linear-gradient(top, #555555 0%,#515151 18%,#373737 85%,#333333 100%);
+	background-image: -o-linear-gradient(top, #555555 0%,#515151 18%,#373737 85%,#333333 100%);
+	background-image: linear-gradient(top, #555555 0%,#515151 18%,#373737 85%,#333333 100%);
+	-webkit-box-shadow: 0 0 10px #333;
+	-moz-box-shadow: 0 0 10px #333;
+	box-shadow: 0 0 10px #333;
+	
+	font-family: sans-serif;
+	font-size: 13px;
+	line-height: 1.2;
+	color: #000;
+	
+	font-weight: normal;
+	z-index: 10001;
+	height: 42px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.nav-v5-2-header {
+background: none;
+}
+.nav-v5-2-header #top-header {
+background-color: #3f3f3f;
+background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #696969), color-stop(100%, #3f3f3f));
+background-image: -webkit-linear-gradient(top, #696969 0%,#3f3f3f 100%);
+background-image: -moz-linear-gradient(top, #696969 0%,#3f3f3f 100%);
+background-image: -o-linear-gradient(top, #696969 0%,#3f3f3f 100%);
+background-image: linear-gradient(top, #696969 0%,#3f3f3f 100%);
+height: 42px;
+}
+#top-header {
+z-index: 2;
+position: relative;
+
+}
+
+#top-header>.wrapper {
+	z-index: 3;
+}
+
+.global-header .wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	width: 974px;
+	position: relative;
+}
+
+#body, .primary, .wrapper {
+clear: both;
+}
+
+/*list items menu*/
+.global-header .nav.guest-nav {
+	float: right;
+}
+.global-header .nav .nav-item {
+	float: left;
+	line-height: 13px;
+	position: relative;
+}
+
+.global-header .nav .nav-link {
+	padding-top: 13px;
+	padding-bottom: 14px;
+	color: #0077b5;
+	text-decoration: none;
+	cursor: pointer;
+	display: block;
+}
+
+.nav-v5-2-header .nav .nav-link {
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #D7D7D7;
+}
+
+ol, ul {
+list-style: none;
+}
+
+.global-header .nav a {
+	color: #0077b5;
+	text-decoration: none;
+}
+
+.global-header .nav a:hover {
+	color: #0077b5;
+}
+
+a:visited{
+	color: #069;
+}
+a {
+	text-decoration: none;
+	color: #069;
+}
+
+
+/*logo*/
+#li-logo {
+background: url('images/logo_linkedin_flat_white_93x21.png') left center no-repeat;
+width: 93px;
+text-indent: -119988px;
+overflow: hidden;
+text-align: left;
+margin-top: 3px;
+display: block;
+height: 36px;
+position: relative;
+left: -1px;
+float: left;
+margin-left: 0px;
+margin-right: 5px;
+}
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-weight: inherit;
+font-style: inherit;
+font-size: 100%;
+/*font-family: inherit;*/
+vertical-align: baseline;
+-webkit-text-size-adjust: 100%;
+}
+
+
+/**************************** Body Css Starts here **********************************/
+
+.chrome-v5-responsive #body {
+margin-top: 80px;
+margin-bottom: 10px;
+}
+
+#body, .primary, .wrapper {
+clear: both;
+}
+
+#body, #footer {
+margin-left: auto;
+margin-right: auto;
+width: 980px;
+}
+
+#body {
+margin-top: 50px;
+margin-bottom: 10px;
+}
+
+div {
+display: block;
+}
+
+#body .wrapper {
+padding: 0 3px;
+}
+
+#body, .primary, .wrapper {
+clear: both;
+}
+
+#main {
+background: #FFF;
+-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),-1px 0 0 rgba(0, 0, 0, 0.03),1px 0 0 rgba(0, 0, 0, 0.03),0 1px 0 rgba(0, 0, 0, 0.12);
+-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15),-1px 0 0 rgba(0,0,0,0.03),1px 0 0 rgba(0,0,0,0.03),0 1px 0 rgba(0,0,0,0.12);
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),-1px 0 0 rgba(0, 0, 0, 0.03),1px 0 0 rgba(0, 0, 0, 0.03),0 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+
+.header {
+background: rgba(0, 0, 0, 0) url('images/texture_hero_974x409_v2.png') 0 0 no-repeat;
+}
+
+.header .philosophy {
+padding-top: 30px;
+overflow: hidden;
+}
+
+.header .philosophy.user-agreement .description {
+float: left;
+margin-left: 41px;
+position: relative;
+width: 933px;
+margin-top: 0px;
+margin-bottom: 40px;
+}
+
+.header .philosophy .description {
+float: left;
+width: 441px;
+padding-left: 30px;
+}
+
+#main h1 {
+font-size: 24px;
+font-weight: bold;
+line-height: 26px;
+color: #000;
+font-size: 32px;
+}
+
+h1 {
+display: block;
+font-size: 2em;
+-webkit-margin-before: 0.67em;
+-webkit-margin-after: 0.67em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+font-weight: bold;
+}
+
+.header .philosophy.user-agreement .description .text {
+float: left;
+width: 687px;
+}
+
+
+.header .philosophy .description p {
+font-size: 13px;
+line-height: 17px;
+color: #333;
+font-weight: normal;
+padding-top: 15px;
+}
+
+
+.os-win body {
+font-family: Arial,sans-serif;
+}
+
+.section {
+float: left;
+margin-left: 41px;
+position: relative;
+width: 933px;
+}
+
+h2#introduction {
+float: left;
+margin-right: 41px;
+position: relative;
+width: 892px;
+}
+
+h2 {
+font-size: 24px;
+font-weight: bold;
+line-height: 26px;
+color: #000;
+margin: 30px 0 25px;
+vertical-align: middle;
+}
+
+h2#intro .last-revised, h2#introduction .last-revised {
+float: right;
+font-size: 12px;
+line-height: 14px;
+color: #999;
+font-weight: normal;
+padding-top: 5px;
+}
+
+.section .first {
+padding-top: 0;
+}
+
+.section .row {
+padding: 20px 0 10px;
+border-bottom: 1px solid #EEE;
+}
+
+.brief-copy {
+float: left;
+width: 277px;
+font-size: 16px;
+line-height: 20px;
+color: #333;
+font-weight: normal;
+}
+
+.brief-copy p:first-child {
+margin-top: 0;
+}
+
+.brief-copy p {
+margin-top: 10px;
+margin-bottom: 0px;
+}
+
+.full-copy, .full-copy-no-brief {
+font-size: 13px;
+line-height: 17px;
+color: #333;
+font-weight: normal;
+color: #999;
+}
+
+.full-copy {
+margin-left: 10px;
+float: left;
+margin-left: 51px;
+position: relative;
+width: 564px;
+}
+
+.full-copy p, .full-copy li, .full-copy-no-brief p, .full-copy-no-brief li {
+margin-bottom: 10px;
+}
+
+a:visited, #footer a:visited {
+color: #069;
+}
+
+a {
+color: #0077B5;
+text-decoration: none;
+}
+
+h3 {
+font-size: 13px;
+font-weight: bold;
+line-height: 17px;
+color: #000;
+}
+
+.full-copy p, .full-copy li, .full-copy-no-brief p, .full-copy-no-brief li {
+margin-bottom: 10px;
+}
+
+
+.section .last {
+border-bottom: none;
+padding-bottom: 10px;
+}
+

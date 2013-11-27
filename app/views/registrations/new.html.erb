@@ -1,0 +1,392 @@
+
+<link href="/stylesheets/main-header1.css" rel="stylesheet">
+<link href="/stylesheets/main.css" rel="stylesheet">
+<script src="/javascripts/script.js"></script>
+
+
+	<% provide(:title, 'Worlds Largest Professional Network') %>
+
+<div id="header" class="global-header responsive-header nav-v5-2-header responsive-1" role="banner">
+    <div id="top-header">
+      <div class="wrapper">
+        <h2 class="logo-container">
+          <a  href="/users/sign_up" class="logo" id="li-logo">LinkedIn Home</a>
+        </h2>
+  
+        <ul class="nav main-nav guest-nav" role="navigation">
+          <li class="nav-item">
+            <a  href="/home/whatislinkedin" class="nav-link">What is LinkedIn?</a>
+          </li>
+          
+          <li class="nav-item">
+            <a  href="/register" class="nav-link" rel="nofollow">Join Today</a>
+          </li>
+          
+          <li class="nav-item">
+          	<%= link_to "Sign In" , session_path(resource_name) ,:class => "nav-link"  %>
+            
+          </li>
+        </ul>
+      </div>
+    </div>
+        <div class="a11y-content">
+      <a name="a11y-content" tabindex="0" id="a11y-content-link">Main content starts below.</a>
+    </div>
+  </div>
+
+
+<div id="body" class="" role="main">
+		<div class="wrapper hp-nus-wrapper">
+						
+			<div id="global-error">
+			 <div class="alert error">
+			 	<p><strong>Please correct the marked field(s) below.</strong></p>
+			 </div>
+			</div>
+
+			<%= devise_error_messages! %>
+
+		<div id="main">
+		  <div id="content">
+		  <h1>Over 225 million professionals use LinkedIn to exchange information, ideas and opportunities</h1>
+		    <ul>
+		      <li id="reconnect">Stay informed about your contacts and industry</li>
+		      <li id="answers">Find the people &amp; knowledge you need to achieve your goals</li>
+		      <li id="power">Control your professional identity online</li>
+		    </ul>
+		  </div>
+    <div class="leo-module mod-feat jointoday" id="module-id3">
+        <div class="header"><h2>Join LinkedIn Today</h2>
+        </div>
+	    <div class="content">
+	    	
+
+	 <%= form_for(resource, :as => resource_name, :validates => true , :url => registration_path(resource_name), :class => "ajax-form" , :id => "sign_up" )  do |f| %>
+	        
+	        
+	        <fieldset>
+	          <legend>Sign Up</legend>
+	          <ul>
+	                <li id="first-name">
+	                    <label for="firstName-coldRegistrationForm">First Name:</label>
+	                    <div class="fieldgroup">
+	                      <span class="error" id="firstName-coldRegistrationForm-error">Please enter a first name.</span>
+
+	                        <%= f.text_field :userfname ,:id => "firstName-coldRegistrationForm" ,:maxlength => "20" %>
+
+	                    </div>
+	                </li>
+	                <li id="last-name">
+	                    <label for="lastName-coldRegistrationForm">Last Name:</label>
+	                    <div class="fieldgroup">
+	                      <span class="error" id="lastName-coldRegistrationForm-error">Please enter a last name.</span>
+	                      <%= f.text_field :userlname ,:id => "lastName-coldRegistrationForm" ,:maxlength => "20" %>
+	                    </div>
+	                </li>
+	            <li id="email-address">
+	                <label for="email-coldRegistrationForm">Email:</label>
+	                <div class="fieldgroup">
+	                    <span class="error" id="email-coldRegistrationForm-error">Please enter a valid email address.</span>
+	                  
+
+	                  <%= f.email_field :email , :id=> "email-coldRegistrationForm" %>
+
+	                </div>  
+	            </li>
+	            <li id="password">
+	                <label for="password-coldRegistrationForm">Password:</label>
+	                <div class="fieldgroup">
+	                  <span class="error" id="password-coldRegistrationForm-error">Please enter a password.</span>
+	                  
+
+	                  <%= f.password_field :password , :id => "password-coldRegistrationForm" %>
+	                  <p class="hint">6 or more characters</p>
+	                </div>
+	            </li>
+	          </ul>
+
+
+
+	           <p class="action">
+	             
+	             <div><%= f.submit "Sign up" ,:id => "btn-submit" ,:class => "btn-tertiary" %></div>
+				
+	              <a href="#agreement">*</a>
+
+
+	          </p>
+	          <div class="progress-indicator"></div>
+	          <p class="already-on-linkedin-message">Already on LinkedIn?
+	              <a href="/users/sign_in" tracking="hb_signin" rel="nofollow">Sign in.</a>
+	         </p>
+	        </fieldset>
+	      <%end%>
+	      
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="search-browse">
+	<div id="search">
+		<%= form_for Advancesearch.new , :html=> { :name=>"searchForm" } do |f|   %>
+			<h3>Search for someone by name:</h3>
+			<ul>
+				<li>
+			    	<label for="first" id="yui-gen3" style="display: none;">First Name</label>
+			    	<%= f.text_field :fname , :id => "search-by-firstName" , :placeholder=> "First Name"%>
+			    </li>
+			    
+			    <li>
+			    	<label for="last" id="yui-gen4" style="display: none;">Last Name</label>
+					<%= f.text_field :lname , :id => "search-by-lastName" , :placeholder=> "Last Name"%>
+				</li>
+			</ul>
+
+			<p class="action">
+				<%= f.submit 'Go', :name=>"search", :id=>"search-btn", :class => "btn-secondary" %>
+			</p>
+	    <%end%>
+    </div>
+
+	<div id="directory" class="us">
+		<h3>
+		    LinkedIn member directory:   
+		</h3>
+		<ol type="a" class="primary">
+		      <li>
+		          <a href="/home/default">a</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">b</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">c</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">d</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">e</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">f</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">g</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">h</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">i</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">j</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">k</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">l</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">m</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">n</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">o</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">p</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">q</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">r</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">s</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">t</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">u</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">v</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">w</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">x</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">y</a>
+		        </li>
+		      
+		    
+		      
+		        <li>
+		          <a href="/home/default">z</a>
+		        </li>
+		      
+		      <li>
+		          
+		            <a href="/home/default" class="callout-trigger nlcl-hovercard-trigger" id="yui-gen5">more</a> 
+		        
+		      </li>
+		    
+		    
+		      <li class="country-search">
+		        Browse members <a href="/home/default">by country</a>
+		      </li>
+		</ol>   
+	</div>
+
+    <p id="agreement">
+          <strong>*</strong> By joining LinkedIn, you agree to LinkedIn's <a href="/home/agreement">User Agreement</a>, <a href="/home/agreement">Privacy Policy</a> and <a href="/home/default">Cookie Policy</a>.
+    </p>
+  </div>
+
+ </div>        
+</div>
+</div>
+
+<div id="footer">
+   <div class="wrapper">
+     <ul class="nav-footer">
+       <li>
+         <a href="/home/default" target="_blank" rel="nofollow" class="cust-svc-link"><strong><b>Help Center</b></strong></a>
+       </li>
+       
+       <li><a href="/home/whatislinkedin">About</a></li>
+       <li><a href="/home/default" target="_blank">Press</a></li>
+       <li><a href="/home/default" target="_blank">Blog</a></li>
+       <li><a href="/home/default">Careers</a></li>
+       <li><a href="/home/default">Advertising</a></li>
+       <li><a href="/home/default" target="_blank">Talent Solutions</a></li>
+       <li><a href="/home/default">Tools</a></li>
+       <li><a href="/home/default" target="_blank">Mobile</a></li>
+       <li><a href="/home/default" target="_blank">Developers</a></li>
+       <li><a href="/home/default">Publishers</a></li>
+       
+       <li id="nav-utility-lang">
+         <a href="/home/default">Language</a>
+       </li>
+
+
+       <li class="last"><a href="/home/default" target="_blank">SlideShare</a></li>
+    </ul>
+
+
+       <ul class="nav-footer">
+         <li><a href="/home/default">LinkedIn Updates</a></li>
+         <li><a href="/home/default">LinkedIn Influencers</a></li>
+         <li><a href="/home/default">LinkedIn Jobs</a></li>
+         <li><a href="/home/default">Jobs Directory</a></li>
+         <li><a href="/home/default">Company Directory</a></li>
+         <li><a href="/home/default">Groups Directory</a></li>
+         <li class="last"><a href="/home/default">Title Directory</a></li>
+       </ul>
+       
+       <p id="copyright" class="guest"><span>LinkedIn Corporation</span> <em> &copy 2013</em></p>
+       
+       <ul id="nav-legal">
+         <li><a href="/home/agreement">User Agreement</a></li>
+         <li><a href="/home/default">Privacy Policy</a></li>
+         <li>
+          <a href="/home/default" target="_blank" rel="nofollow">Community Guidelines</a>
+         </li>
+         <li><a href="/home/default">Cookie Policy</a></li>
+         <li class="last"><a href="/home/default">Copyright Policy</a></li>
+      </ul>
+   </div>
+</div>

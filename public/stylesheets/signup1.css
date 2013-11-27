@@ -1,0 +1,352 @@
+/**********************side block*********************/
+#motivation {
+	width: 280px;
+	_width: 270px;
+	float: right;
+	margin-top: 10px;
+	display: inline;
+	position: relative;
+	z-index: 1;
+}
+
+#motivation .profile-features {
+	border: 1px solid #baddee;
+	padding: 10px;
+}
+
+#motivation .profile-features h3 {
+font-weight: bold;
+margin-bottom: 2px;
+font-size: 90%;
+margin-bottom: 10px;
+background: #fff url('/images/icon_lightbulb_10x17.png') no-repeat;
+padding-left: 20px;
+}
+
+ol, ul {
+list-style: none;
+}
+
+#motivation .profile-features li.first {
+margin-top: 0;
+}
+
+#motivation .profile-features li {
+font-size: 80%;
+margin-top: 8px;
+background: #fff url('/images/sprite_registration_v2.png') no-repeat scroll 0 -297px;
+padding-left: 15px;
+}
+
+.progress-container {
+overflow: hidden;
+zoom: 1;
+border-bottom: 1px solid #ccc;
+}
+
+/**************************************form styling****************************//
+
+.standard-form.sided {
+width: 485px;
+margin: 0 0 20px;
+float: left;
+}
+
+.standard-form ul {
+margin: 0;
+padding-top: 22px;
+list-style-type: none;
+}
+
+
+
+
+
+.standard-form.sided ul ul, .standard-form.sided .fieldgroup, .standard-form.sided p {
+margin-left: 160px;
+}
+
+.standard-form ul ul, .standard-form .fieldgroup {
+margin: 0 0 0 195px;
+_margin-left: 198px;
+padding: 0;
+}
+
+.standard-form .fieldgroup input, .standard-form .fieldgroup select, .standard-form .fieldgroup textarea, .standard-form .typeahead input {
+width: 310px;
+box-sizing: border-box;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+}
+
+.standard-form input, .standard-form select, .standard-form textarea {
+font-size: 13px;
+}
+
+form ul input.text-input {
+border: 1px solid #999;
+padding: 2px 3px;
+}
+.standard-form input, .standard-form select, .standard-form textarea {
+font-size: 13px;
+}
+.locationPickersHolder {
+width: 310px;
+}
+
+
+.standard-form.sided ul ul, .standard-form.sided .fieldgroup, .standard-form.sided p {
+margin-left: 160px;
+}
+
+
+.standard-form p.example, .standard-form p.tip, .standard-form p.note {
+font-size: 11px;
+color: #666;
+}
+.standard-form p {
+margin-left: 195px;
+_margin-left: 200px;
+margin-top: .25em;
+color: #333;
+}
+
+
+ #main #status-chooser-container {
+margin: 12px 0 16px;
+}
+
+standard-form li fieldset legend {
+position: relative;
+line-height: 1.5;
+padding: 0;
+margin: 0;
+}
+.standard-form legend {
+font-size: 180%;
+color: #333;
+background-color: #fff;
+padding-right: 10px;
+_margin-left: -7px;
+}
+
+.standard-form li fieldset legend span {
+font-size: 13px;
+position: absolute;
+white-space: normal;
+}
+.standard-form label, .standard-form li fieldset legend span, .standard-form li fieldset.details fieldset legend {
+font-size: 13px;
+color: #333;
+background-color: transparent;
+font-weight: bold;
+display: inline;
+float: left;
+text-align: right;
+width: 185px;
+margin-right: 10px;
+}
+
+.standard-form.sided ul ul, .standard-form.sided .fieldgroup, .standard-form.sided p {
+margin-left: 160px;
+}
+.standard-form ul {
+list-style-type: none;
+}
+
+#main #status-chooser-container li {
+float: left;
+width: 30%;
+}
+.standard-form li li, .standard-form fieldset.details li li {
+margin-bottom: 0;
+}
+
+.standard-form li fieldset label, .standard-form li fieldset.details fieldset label {
+font-weight: normal;
+float: none;
+text-align: left;
+line-height: 1;
+width: auto;
+margin-bottom: 0;
+}
+
+.standard-form.sided #status-chooser-container fieldset input {
+margin-right: 5px;
+}
+.standard-form input, .standard-form select, .standard-form textarea {
+font-size: 13px;
+}
+
+
+.standard-form.unknown-company .job-title, .standard-form.known-company .job-title {
+margin-bottom: 10px;
+}
+
+form ul input, form ul textarea, form ul .self-employed .fieldgroup input, form ul fieldset input:focus, form ul .fieldgroup input:focus {
+border: 0;
+padding: 3px 0;
+}
+.standard-form .self-employed input {
+width: auto;
+margin-left: 0;
+}
+.standard-form li.company {
+position: relative;
+}
+.standard-form li, .standard-form fieldset.details li {
+margin-bottom: 10px;
+display: inline;
+line-height:2;
+}
+
+
+
+.typeahead-results-container {
+float: left;
+}
+.typeahead-results-container {
+min-width: 360px;
+width: auto;
+_width: 360px;
+left: -2px;
+top: 2px;
+width: 360px;
+}
+
+
+
+
+.standard-form p.actions {
+margin-top: 15px;
+background: transparent;
+padding-top: 0;
+}
+.standard-form.sided ul ul, .standard-form.sided .fieldgroup, .standard-form.sided p {
+margin-left: 160px;
+}
+
+.standard-form p.actions input {
+font-size: inherit;
+vertical-align: middle;
+}
+
+/*******************************button css*********************/
+.btn-primary, .btn-menu-open.btn-primary, .btn-split.btn-primary:hover {
+background: #0571A6;
+background: -moz-linear-gradient(top, #73aec9 0, #73aec9 1px, #338ab0 1px, #0571a6 100%);
+background: -o-linear-gradient(top, #73aec9 0, #73aec9 1px, #338ab0 1px, #0571a6 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #73aec9), color-stop(5%, #73aec9), color-stop(5%, #338ab0), color-stop(100%, #0571a6));
+background: linear-gradient(top, #73aec9 0%,#73aec9 1px,#338ab0 1px,#0571a6 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#338AB0', endColorstr='#0571A6',GradientType=0 );
+border-color: #045a8b;
+color: #fff !important;
+}
+.btn-primary, .btn-new-primary, .btn-secondary, .btn-new-secondary, .btn-tertiary, .btn-ternary, .btn-quaternary, .btn-action {
+border-width: 1px;
+border-style: solid;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+cursor: pointer;
+font-size: 12px;
+line-height: 1.35;
+margin: 0;
+overflow: visible;
+padding: 3px 10px 2px;
+text-decoration: none !important;
+vertical-align: top;
+width: auto;
+}
+body, input, select, textarea, button {
+font-family: sans-serif;
+}
+
+.standard-form p.key {
+font-size: 11px;
+color: #666;
+margin-top: 15px;
+}
+
+
+.standard-form p.key strong {
+vertical-align: top;
+color: #900;
+font-size: 13px;
+}
+strong {
+font-weight: bold;
+}
+
+
+.standard-form .self-employed label {
+width: auto;
+float: none;
+display: inline;
+font-weight: normal;
+font-size: 11px;
+}
+
+
+
+.previous-daterange li, .previous-daterange select {
+display: inline-block;
+overflow: hidden;
+min-width: 80px;
+}
+
+
+
+#age .info {
+display: inline-block;
+width: 14px;
+height: 14px;
+}
+
+#age .over-eighteen label {
+display: inline;
+}
+
+#age .dob-chooser {
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 5px;
+padding-bottom: 10px;
+width: 270px;
+background-color: #EFEFEF;
+border-top: 1px solid #CCC;
+display: none;
+}
+
+#age .dob-chooser .instruction {
+margin-top: 0px;
+margin-bottom: 5px;
+font-size: 13px;
+line-height: 17px;
+color: #333;
+font-weight: normal;
+margin-left: 0px;
+}
+
+#age .over-eighteen {
+margin-top: 0px;
+margin-bottom: 10px;
+}
+
+
+
+
+/******error css*******/
+.standard-form .error {
+font-size: 12px;
+color: #900;
+font-weight: bold;
+}
+
+span.error {
+font-weight: bold;
+color: #900;
+}
+
+
+

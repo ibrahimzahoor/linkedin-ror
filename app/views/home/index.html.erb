@@ -1,0 +1,40 @@
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/new-feed.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/profile.css">
+
+<script src="/javascripts/home.js"></script>
+	
+	<% provide(:title, 'Welcome!') %>
+	
+	<%= render '/layouts/header_loggedin' %>
+
+
+	<div class="activitynew">
+    <h2>Activity</h2>
+      <div class="createPost">
+            
+        <%= form_for(@post) do |f| %>
+          <div class="field">
+            <%= f.text_area :content, placeholder: "Share an update..." ,:class=>"post_text_area" %>
+          </div>
+                  
+          <div class="clearfix">
+            <div class="input">
+              <%= f.file_field :image , :class=>"post aselect" %>
+            </div>
+          </div>
+
+          <%= f.select(:public, ['Public', 'Connections',],{}, :class => "post_public bselect") %>
+                  
+          <%= f.submit "Share", :class => "acceptaaa" %>
+
+        <% end %>
+            
+      </div>
+      <ol class="microposts">
+        <%= render 'posts' %>
+      </ol>
+  </div>
+
+    

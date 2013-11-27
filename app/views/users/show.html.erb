@@ -1,0 +1,421 @@
+<link rel="icon" href="favicon.ico" />
+    
+    <link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/profile.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/liveurl.css">
+    <script src="/javascripts/home.js"></script>
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/advance_search.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" > </script>
+    <script src="/javascripts/jquery.liveurl.js"> </script>
+
+    <%if current_user == @user %>
+      <% provide(:title, 'Your Profile') %>
+    <%else%>
+      <% provide(:title, 'Profile') %>
+    <%end%>
+    
+<%= render '/layouts/header_loggedin' %>
+
+<section>
+    <div id="BodyWrapper">
+      <div id="MainBody">
+
+    
+        <div id="results_col">
+          <div id="results_count" class="mod results_count">
+            
+            <div class="photo_area">
+          		 <%= image_tag @user.image_url(:thumb).to_s , :class => "profile_pic"%>
+			      </div>
+          	
+          	<div class="name">
+          		<b> <%= @user.userfname + " " + @user.userlname %> </b>
+          	</div>
+
+            <div class="personal_info">
+              <div class="uni">Student at <%= @user.university%> </div> </br>
+              <div class="country_etc"> <%= @user.country %> | <%= @user.industry %> </div>
+            </div>
+
+            <br/>
+            <% if current_user == @user %>
+              <%= link_to "Edit Profile", '/users/edit/'  , :class=>"dselect"%> 
+            <%end%>
+
+            <div class="member-connections">
+              <strong>
+                <a href="/contacts/" class="connections-link"> <%=@user.friends.count %> </a> </br>
+              </strong>
+              connections
+            </div>
+            <br />
+
+
+            			      
+        			<% if user_signed_in? %>
+        				<% if current_user != @user %>
+        				<div class="relation_status">
+        					<% if current_user.friend_with? @user  %>
+        					     <%= button_to "Remove Friend", {:controller => :friendships, :action => :destroy, :user_id => @user }, :method => :delete ,:class => "reject" %>
+        					<% elsif current_user.invited? @user  %>
+        					     
+        					     <%= button_to "Cancel Request", {:controller => :friendships, :action => :destroy, :user_id => @user }, :method => :delete ,:class => "reject" %>
+        					<% elsif @user.invited? current_user  %>
+        					     <%= button_to "Accpet", {:controller => :friendships, :action => :update, :user_id => @user  }, :method => :put ,:class => "acceptold" %>
+        					     <%= button_to "Decline", {:controller => :friendships, :action => :destroy, :user_id => @user }, :method => :delete ,:class => "reject" %>
+
+
+
+        					<% else %>
+        					     <%= button_to "Connect", friendships_path( :user_id => @user), :method => :post,:class => "acceptold" %>
+        					<% end %>
+        				</div>
+        				<% end %>
+        			<% end %>
+          </div>
+          
+
+          <div class="activity">
+            <h2>Activity</h2>
+          <div class="createPost">
+            <% if current_user == @user %>
+                <%= form_for(@post) do |f| %>
+                  
+                  <div class="field">
+                    <%= f.text_area :content, placeholder: "Share an update..." ,:class=>"post_text_area" %>
+                  </div>
+                  
+                  <div class="clearfix">
+                      <div class="input">
+                        <%= f.file_field :image , :class=>"post aselect" %>
+                      </div>
+                      <div class="liveurl-loader"></div>
+      
+                        <div class="liveurl">
+                            <div class="close" title="Entfernen"></div>
+                            <div class="inner">
+                                <div class="image"> </div>
+                                <div class="details">
+                                    <div class="info">
+                                        <div class="title"> </div>
+                                        <div class="description"> </div> 
+                                        <div class="url"> </div>
+                                    </div>
+
+                                    <div class="thumbnail">
+                                        <div class="pictures">
+                                            <div class="controls">
+                                                <div class="prev button inactive"></div>
+                                                <div class="next button inactive"></div>
+                                                <div class="count">
+                                                    <span class="current">0</span><span> von </span><span class="max">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="video"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                  </div>
+
+                  <%= f.select(:public, ['Public', 'Connections',],{}, :class => "post_public bselect")%>
+                  
+                  <%= f.submit "Share", class: "accept" %>
+                
+                <% end %>
+            <%end%>
+          </div>
+
+          <ol class="microposts">
+            
+            <% @postsbyuser.each do |post| %>
+            
+                <% if current_user.friend_with? @user%>
+                <li>      
+                  <h1><%= link_to @user.userfname + " " + @user.userlname , @user , :class=>""%></h1> 
+                      </br>
+                  <span class="content"><%= post.content %></span>
+
+                      
+
+                    <% if post.image.present? %>
+                        <%= image_tag post.image_url.to_s , :class=>"post_image"%>
+                    <%end%>
+
+                    
+                      <span class="timestamp">
+                        Posted <%= time_ago_in_words(post.created_at) %> ago.
+                      </span>
+                  
+
+
+                    <div class="comments">
+                      <% post.comments.each do |c| %>
+
+                        <div class="commenter_photo">
+                          <%= image_tag c.user.image_url(:small).to_s , :class => "commenter_pic"%>
+
+                        </div>
+
+                          
+
+                        <span class="commentsmall">
+                          <%= link_to c.user.userfname + " " + c.user.userlname , c.user , :class=>""%>
+                          <%= c.body %>
+                        </span>                        
+
+                        
+                        <span class="timestamp">
+                          Posted <%= time_ago_in_words(c.created_at) %> ago.
+                        </span>
+                      
+                      
+                      <%end%>
+
+                    </div>
+
+                    <%= form_for [post, Comment.new] do |f| %>
+                      <p class="new">
+                             
+                              <%= f.text_area :body, :class=>"newcomment" %>
+                      <%= f.submit "Add comment" ,:class=>"cselect" %></p>
+                      
+                    <% end %>
+                  </li>
+
+
+                  <% elsif current_user == @user  %>
+                    <li>
+                      <%= link_to @user.userfname + " " + @user.userlname , @user , :class=>"name_style"%> 
+                      <span class="content"><%= post.content %></span>
+
+                      <% if post.image.present? %>
+                        <%= image_tag post.image_url.to_s , :class=>"post_image"%>
+                      <%end%>
+
+                      <span class="timestamp">
+                        Posted <%= time_ago_in_words(post.created_at) %> ago.
+                      </span>
+                      <br/>
+
+                      <div class="comments">
+                        <% post.comments.each do |c| %>
+
+                          <div class="abstract">
+                            <span class="commenter_photo">
+                              <%= image_tag c.user.image_url(:small).to_s , :class => "commenter_pic"%>
+                            </span>
+
+                            <span class ="commentview">
+                              <div class="link">
+                                <%= link_to c.user.userfname + " " + c.user.userlname , c.user , :class=>""%>
+                              </div>
+                              <span class="commentsmall">
+                                 <%= c.body %>
+                              </span>
+                            </span>
+                          </div>
+
+                          <span class="timestamp2">
+                            Posted <%= time_ago_in_words(c.created_at) %> ago.
+                          </span>
+                        <% end %>
+                      </div>
+
+                      <%= form_for [post, Comment.new] do |f| %>
+                        <p class="new">
+                          <%= f.text_area :body, :class=>"newcomment" %>
+                          <%= f.submit "Add comment" ,:class=>"cselect" %>
+                        </p>
+                      <% end %>
+                    </li>
+
+                  <% elsif post.public == "Public" %>                
+                    <li>
+                      <%= link_to @user.userfname + " " + @user.userlname , @user , :class=>"name_style"%> 
+                      <span class="content"><%= post.content %></span>
+
+                      <% if post.image.present? %>
+                        <%= image_tag post.image_url.to_s , :class=>"post_image"%>
+                      <%end%>
+
+                      <span class="timestamp">
+                        Posted <%= time_ago_in_words(post.created_at) %> ago.
+                      </span>
+                      <br/>
+
+                      <div class="comments">
+                        <% post.comments.each do |c| %>
+
+                          <div class="abstract">
+                            <span class="commenter_photo">
+                              <%= image_tag c.user.image_url(:small).to_s , :class => "commenter_pic"%>
+                            </span>
+
+                            <span class ="commentview">
+                              <div class="link">
+                                <%= link_to c.user.userfname + " " + c.user.userlname , c.user , :class=>""%>
+                              </div>
+                              <span class="commentsmall">
+                                 <%= c.body %>
+                              </span>
+                            </span>
+                          </div>
+
+                          <span class="timestamp2">
+                            Posted <%= time_ago_in_words(c.created_at) %> ago.
+                          </span>
+                        <% end %>
+                      </div>
+
+                      <%= form_for [post, Comment.new] do |f| %>
+                        <p class="new">
+                          <%= f.text_area :body, :class=>"newcomment" %>
+                          <%= f.submit "Add comment" ,:class=>"cselect" %>
+                        </p>
+                      <% end %>
+                    </li>
+                  <%end%>
+            <% end %>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script> 
+
+                var curImages = new Array();
+                
+                $('.post_text_area').liveUrl({
+                    loadStart : function(){
+                        $('.liveurl-loader').show();
+                    },
+                    loadEnd : function(){
+                        $('.liveurl-loader').hide();
+                    },
+                    success : function(data) 
+                    {                        
+                        var output = $('.liveurl');
+                        output.find('.title').text(data.title);
+                        output.find('.description').text(data.description);
+                        output.find('.url').text(data.url);
+                        output.find('.image').empty();
+                        
+                        output.find('.close').one('click', function() 
+                        {
+                            var liveUrl     = $(this).parent();
+                            liveUrl.hide('fast');
+                            liveUrl.find('.video').html('').hide();
+                            liveUrl.find('.image').html('');
+                            liveUrl.find('.controls .prev').addClass('inactive');
+                            liveUrl.find('.controls .next').addClass('inactive');
+                            liveUrl.find('.thumbnail').hide();
+                            liveUrl.find('.image').hide();
+
+                            $('.post_text_area').trigger('clear'); 
+                            curImages = new Array();
+                        });
+                        
+                        output.show('fast');
+                        
+                        if (data.video != null) {                       
+                            var ratioW        = data.video.width  /350;
+                            data.video.width  = 350;
+                            data.video.height = data.video.height / ratioW;
+        
+                            var video = 
+                            '<object width="' + data.video.width  + '" height="' + data.video.height  + '">' +
+                                '<param name="movie"' +
+                                      'value="' + data.video.file  + '"></param>' +
+                                '<param name="allowScriptAccess" value="always"></param>' +
+                                '<embed src="' + data.video.file  + '"' +
+                                      'type="application/x-shockwave-flash"' +
+                                      'allowscriptaccess="always"' +
+                                      'width="' + data.video.width  + '" height="' + data.video.height  + '"></embed>' +
+                            '</object>';
+                            output.find('.video').html(video).show();
+                            
+                         
+                        }
+                    },
+                    addImage : function(image)
+                    {   
+                        var output  = $('.liveurl');
+                        var jqImage = $(image);
+                        jqImage.attr('alt', 'Preview');
+                        
+                        if ((image.width / image.height)  > 7 
+                        ||  (image.height / image.width)  > 4 ) {
+                            // we dont want extra large images...
+                            return false;
+                        } 
+
+                        curImages.push(jqImage.attr('src'));
+                        output.find('.image').append(jqImage);
+                        
+                        
+                        if (curImages.length == 1) {
+                            // first image...
+                            
+                            output.find('.thumbnail .current').text('1');
+                            output.find('.thumbnail').show();
+                            output.find('.image').show();
+                            jqImage.addClass('active');
+                            
+                        }
+                        
+                        if (curImages.length == 2) {
+                            output.find('.controls .next').removeClass('inactive');
+                        }
+                        
+                        output.find('.thumbnail .max').text(curImages.length);
+                    }
+                });
+              
+              
+                $('.liveurl ').on('click', '.controls .button', function() 
+                {
+                    var self        = $(this);
+                    var liveUrl     = $(this).parents('.liveurl');
+                    var content     = liveUrl.find('.image');
+                    var images      = $('img', content);
+                    var activeImage = $('img.active', content);
+
+                    if (self.hasClass('next')) 
+                         var elem = activeImage.next("img");
+                    else var elem = activeImage.prev("img");
+      
+                    if (elem.length > 0) {
+                        activeImage.removeClass('active');
+                        elem.addClass('active');  
+                        liveUrl.find('.thumbnail .current').text(elem.index() +1);
+                        
+                        if (elem.index() +1 == images.length || elem.index()+1 == 1) {
+                            self.addClass('inactive');
+                        }
+                    }
+
+                    if (self.hasClass('next')) 
+                         var other = elem.prev("img");
+                    else var other = elem.next("img");
+                    
+                    if (other.length > 0) {
+                        if (self.hasClass('next')) 
+                               self.prev().removeClass('inactive');
+                        else   self.next().removeClass('inactive');
+                   } else {
+                        if (self.hasClass('next')) 
+                               self.prev().addClass('inactive');
+                        else   self.next().addClass('inactive');
+                   }
+                   
+                   
+                   
+                });
+          </script>
+</section>
+

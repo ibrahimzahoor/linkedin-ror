@@ -1,0 +1,53 @@
+<div class="container">
+	<div class="row">
+
+    
+
+    <table id="user-table" class="zebra-striped">
+      <tr>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @users.each do |u| %>
+      <tr>
+        <td><%= u.email %></td>
+        <td><%= link_to 'Show', u %></td>
+        <td><%= link_to 'Edit', edit_user_path(u) %></td>
+        <td>
+
+            <% if user_signed_in? %>
+      <% if current_user != u %>
+        <% if current_user.friend_with? u  %>
+             
+             <%= button_to "Remove", friendship_path(u, :user_id =>  u.id), :method => :delete %>
+        
+        <% elsif current_user.invited? u  %>
+             
+             <span class="btn btn-mini disabled">Pending</span>
+             <%= button_to "Cencel", friendship_path(u, :user_id =>  u.id), :method => :delete %>
+        
+        <% elsif u.invited? current_user  %>
+             
+             <%= button_to "Accept", friendship_path(u,:user_id => u.id), :method => :put %>
+             <%= button_to "Decline", friendship_path(u, :user_id =>  u.id), :method => :delete %>
+
+        <% else %>
+             
+             <%= button_to "Add Friend", friendships_path( :user_id =>  u), :method => :post %>
+        
+        <% end %>
+      <% end %>
+    <% end %>
+         </td>
+      </tr>
+
+      
+
+    <% end %>
+    </table>
+  </div>
+</div>
+

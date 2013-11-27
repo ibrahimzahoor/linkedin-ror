@@ -1,0 +1,26 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/advance_search.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/listfriends.css">
+  <script src="/javascripts/home.js"></script>
+  <script src="/javascripts/advance_search.js"></script>
+  
+  <% provide(:title, 'Advance Search') %>
+  <%= render '/layouts/header_loggedin' %>
+
+
+  <section>
+    <div id="BodyWrapper">
+      <div id="MainBody">
+        <div id="Search">
+          <h2>
+            ADVANCE SEARCH
+          </h2>
+        </div>
+        
+        <div id="facets-col">
+          <div id="advs">
+            <%= render 'form' %>
+          </div>
+        </div>
+        
+  </section>

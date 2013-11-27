@@ -1,0 +1,89 @@
+a:visited, #footer a:visited {
+color: #069;
+}
+
+
+
+#footer {
+font-size: 12px;
+line-height: 14px;
+color: #666;
+font-weight: normal;
+padding-top: 10px;
+padding-bottom: 10px;
+margin-left: auto;
+margin-right: auto;
+width: 974px;
+border-top: 1px solid #CCC;
+}
+
+#body, #footer {
+margin-left: auto;
+margin-right: auto;
+width: 980px;
+}
+
+#body:after, #footer:after {
+content: "";
+display: table;
+clear: both;
+}
+
+#footer .nav-footer {
+font-size: 13px;
+line-height: 17px;
+color: #333;
+font-weight: normal;
+}
+
+#footer .nav-footer:after {
+content: "";
+display: table;
+clear: both;
+}
+
+#footer .wrapper .nav-footer li {
+margin-bottom: 3px;
+}
+
+#footer .nav-footer>li, #footer #nav-legal>li {
+border-right: 1px solid #CCC;
+margin-right: 8px;
+padding-right: 8px;
+margin-top: 5px;
+margin-bottom: 5px;
+float: left;
+}
+
+.js #nav-utility-lang {
+visibility: visible;
+}
+
+#footer .nav-footer>li.last, #footer #nav-legal>li.last {
+border-right: none;
+}
+
+#footer #copyright {
+border-right: 1px solid #CCC;
+margin-right: 8px;
+padding-right: 8px;
+margin-top: 5px;
+margin-bottom: 5px;
+float: left;
+}
+
+#footer #copyright.guest span {
+float: left;
+height: 16px;
+width: 62px;
+text-indent: -119988px;
+overflow: hidden;
+text-align: left;
+margin-left: 0px;
+margin-right: 3px;
+padding-left: 0px;
+padding-right: 0px;
+margin-top: -2px;
+margin-bottom: -2px;
+background: url('images/logo_linkedin_med_grey_trans_64x16_v1.png') no-repeat scroll top left rgba(0, 0, 0, 0);
+}

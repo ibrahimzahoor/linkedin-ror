@@ -1,0 +1,594 @@
+@font-face {
+	font-family: 'LazyDog';
+	src: url('Lazy Dog Regular.ttf') format('truetype');
+}
+
+/* CSS Document */
+
+body {
+background-color: #e6e6e6;
+}
+
+body {
+font-size: 62.5%;
+line-height: 1.2;
+color: #000;
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+}
+
+#body, .primary, .wrapper {
+clear: both;
+}
+
+#body {
+background: #fff;
+padding: 0;
+border: 1px solid #ccc;
+margin: 0 auto;
+}
+
+div {
+display: block;
+}
+
+#btn-submit: hover
+{
+	color:#000;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-weight: inherit;
+font-style: inherit;
+font-size: 100%;
+font-family: inherit;
+vertical-align: baseline;
+-webkit-text-size-adjust: 100%;
+}
+
+html {
+	overflow-y:scroll;
+	overflow: -moz-scrollbars-vertical;
+}
+
+
+
+#body:after, .primary:after, .wrapper:after, #footer:after{
+content: "";
+display: table;
+clear: both;
+}
+#header, #body, #footer {
+clear: both;
+width: 98em;
+_width: 980px;
+min-width: 980px;
+max-width: 95%;
+margin: 0 auto;
+}
+
+#header, #body, #footer {
+width: 805px;
+min-width: 805px;
+max-width: 95%
+}
+
+.guest #header {
+margin: 0 auto;
+}
+
+#nav-primary, #nav-primary .wrapper {
+background: none;
+padding: 0;
+}
+
+#nav-primary .wrapper {
+height: 39px;
+}
+
+img {
+border: none;
+}
+
+#logo-linkedin {
+float: left;
+margin: 8px 10px 0 4px;
+position: relative;
+}
+
+img[Attributes Style] {
+width: 92px;
+height: 22px;
+}
+
+ol, ul {
+list-style: none;
+}
+
+#nav-primary ul, #nav-primary li, #nav-primary p, #nav-primary fieldset {
+margin: 0;
+padding: 0;
+border: none;
+list-style-type: none;
+}
+
+#nav-primary #nav-primary-auth, #nav-primary #nav-primary-auth.hover, #nav-primary #nav-primary-auth:hover {
+line-height: 39px;
+color: #666;
+background-color: transparent;
+float: right;
+font-weight: normal;
+font-size: 11px;
+}
+#pagekey-reg-cold-signup #nav-primary-auth, #pagekey-reg-group-signup #nav-primary-auth, #pagekey-reg-warm-signup #nav-primary-auth, #pagekey-reg-warm-existing #nav-primary-auth {
+display: inline;
+}
+#nav-utility, #nav-primary .menu li, #global-search {
+display: none;
+}
+
+a {
+text-decoration: none;
+color: #069;
+}
+a:visited, #footer a:visited {
+color: #069;
+}
+
+#body .wrapper {
+padding: 15px;
+}
+
+#main {
+zoom: 1;
+}
+
+.join-linkedin .introduction {
+padding-bottom: 0.2px;
+background: transparent url('/images/bg_arrow_foursided_4a99c0_34x34.png') no-repeat bottom left;
+margin-left: 108px;
+margin-top: -12px;
+}
+
+.join-linkedin .introduction h1 {
+font-size: 180%;
+font-weight: normal;
+color: #fff;
+padding: 10px 15px;
+background: #74b9dc url('/scds/common/u/img/bg/bg_blue_19x63.png') repeat-x bottom left;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+margin-left: -108px;
+}
+
+.fb-reg .introduction {
+background-image: url('/images/bg_arrow_foursided_00679a_34x34.png');
+margin-bottom: 4px;
+}
+#main h1 {
+font-weight: normal;
+font-size: 160%;
+}
+
+#main h1 {
+font-size: 18px;
+overflow: hidden;
+line-height: 23px;
+}
+
+
+.fb-reg .introduction h1 {
+padding: 16px 18px;
+background: #00679a;
+background: -moz-linear-gradient(top, #91cce7 0%, #00679a 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #91cce7), color-stop(100%, #00679a));
+}
+
+
+h1 {
+font-size: 180%;
+color: #39c;
+}
+
+h1 {
+display: block;
+font-size: 2em;
+-webkit-margin-before: 0.67em;
+-webkit-margin-after: 0.67em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+font-weight: bold;
+}
+
+#main.no-profile #content {
+width: 58%;
+}
+
+#content {
+float: left;
+width: 72%;
+}
+
+#header, #nav-primary, #nav-primary .wrapper, #body, #body .wrapper, #main {
+}
+#header:after, #nav-primary:after, #nav-primary .wrapper:after, #body:after, #body .wrapper:after, #main:after {
+content: "\0020";
+display: block;
+height: 0;
+clear: both;
+overflow: hidden;
+visibility: hidden;
+}
+#main.join-linkedin .register-container {
+width: auto;
+}
+#main.fb-reg .register-container {
+border-right: 1px solid #ccc;
+}
+.join-linkedin .register-container {
+overflow: hidden;
+
+margin: 10px 0 25px 0;
+width: 555px;
+}
+#main.no-profile #extra, #extra {
+width: 42%;
+}
+#main.no-profile #extra {
+width: 40%;
+}
+#main.no-profile #extra, #extra {
+width: 42%;
+}
+#extra {
+float: right;
+width: 26%;
+}
+
+
+
+.sign-in-with {
+text-align: center;
+}
+
+
+.handwritten {
+color: #0085C0;
+font-style: italic;
+}
+
+
+
+.handwritten {
+color: #333;
+margin: 1.4em 0 .7em;
+font-size: 21px;
+letter-spacing: .02em;
+line-height: 1.1em;
+}
+
+.handwritten {
+	font-size: 21px;
+	font-weight: 400;
+	font-family: LazyDog;
+	font-style: italic;
+}
+.os-win  .handwritten  {
+font-family: LazyDogRegular,Arial,sans-serif;
+}
+
+
+
+
+
+a:visited, #footer a:visited {
+color: #069;
+}
+.fb_button {
+background: #29447e url('/images/sprite_fb_icon_22.png') 0 -44px no-repeat;
+display: inline-block;
+padding: 0 0 0 1px;
+outline: none;
+margin-bottom: 10px;
+}
+a {
+text-decoration: none;
+color: #069;
+}
+.os-win .fb_button .fb_button_text {
+font-family: Arial,sans-serif;
+}
+.fb_button .fb_button_text {
+font-family: sans-serif;
+}
+.fb_button .fb_button_text {
+background: #5f78ab url('/images/sprite_fb_icon_22.png');
+border-top: 1px solid #879ac0;
+border-bottom: 1px solid #1a356e;
+color: #fff;
+display: block;
+_display: inline-block;
+font-weight: bold;
+font-size: 11px;
+padding: 2px 6px 3px 6px;
+margin: 1px 1px 0 21px;
+height: 14px;
+}
+
+
+#extra abbr {
+font-size: 13px;
+vertical-align: super;
+}
+abbr, acronym {
+border: none;
+}
+
+
+
+#agreement {
+clear: both;
+font-size: 110%;
+border-top: 1px solid #ccc;
+color: #555;
+margin-bottom: 25px;
+padding-top: 15px;
+text-align: center;
+}
+#agreement {
+	margin: 0;
+	font-size: 11px;
+}
+
+a:visited, #footer a:visited {
+color: #069;
+}
+
+.guest #footer {
+border: none;
+padding: 0 0 0 8px;
+}
+
+#footer {
+border-top: 1px solid #ccc;
+margin: 20px auto;
+padding: 10px 0;
+color: #666;
+clear: both;
+}
+
+
+#footer p {
+font-size: 110%;
+}
+#footer ul, #footer li, #footer p {
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+p#terms-of-use {
+margin-bottom: 8px;
+}
+#footer p {
+font-size: 110%;
+}
+#footer ul, #footer li, #footer p {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 11px;
+}
+p#copyright {
+float: left;
+border-right: 1px solid #ccc;
+padding: 0 8px 0 0;
+margin-right: 8px;
+-webkit-text-size-adjust: 165%;
+}
+.join-linkedin .standard-form.sided {
+width: 320px;
+_width: 335px;
+float: left;
+padding: 0 0 0 20px;
+margin: 0;
+}
+form {
+display: block;
+}
+
+
+.fb-reg .standard-form  f.submit{
+width: 267px;
+}
+.standard-form f.submit, .standard-form select, .standard-form textarea {
+font-size: 13px;
+}
+
+
+.join-linkedin .standard-form ul {
+margin: 0;
+padding: 0;
+}
+.standard-form ul {
+margin: 0;
+padding-top: 10px;
+list-style-type: none;
+}
+
+.join-linkedin .standard-form li {
+
+}
+.standard-form li, .standard-form fieldset.details li {
+margin-bottom: 10px;
+}
+
+
+.register-container label {
+padding: 3px 0;
+}
+.standard-form label, .standard-form li fieldset legend span, .standard-form li fieldset.details fieldset legend {
+font-size: 13px;
+color: #333;
+background-color: transparent;
+font-weight: bold;
+display: block;
+float: left;
+text-align: right;
+width: 185px;
+margin-right: 10px;
+}
+.standard-form.sided label, .standard-form.sided li fieldset legend span, .standard-form.sided li fieldset.details fieldset legend {
+width: 110px;
+}
+.join-linkedin .standard-form.sided ul ul, .join-linkedin .standard-form.sided .fieldgroup {
+margin-left: 105px;
+}
+.standard-form.sided .fieldgroup {
+_margin-left: 123px;
+}
+.standard-form.sided ul ul, .standard-form.sided .fieldgroup {
+margin-left: 120px;
+_margin-left: 117px;
+}
+.join-linkedin .standard-form label {
+width: 97px;
+margin-right: 0;
+}
+
+.register-container .fieldgroup {
+	position: relative;
+}
+.standard-form ul ul, .standard-form .fieldgroup {
+margin: 0 0 0 195px;
+_margin-left: 198px;
+padding: 0;
+}
+
+.standard-form .error {
+font-size: 12px;
+color: #900;
+font-weight: bold;
+}
+span.error {
+font-weight: bold;
+color: #900;
+}
+
+.join-linkedin .standard-form.sided p {
+margin-left: 105px;
+display:inline;
+}
+.standard-form.sided p {
+margin-left: 120px;
+}
+.standard-form p.example, .standard-form p.tip, .standard-form p.note {
+font-size: 11px;
+color: #666;
+}
+.standard-form p {
+margin-left: 195px;
+_margin-left: 200px;
+margin-top: .25em;
+color: #333;
+}
+
+
+.join-linkedin .standard-form .actions {
+background: none;
+padding-top: 0;
+margin-top: 10px;
+font-size: 100%;
+zoom: 1;
+}
+.standard-form.sided p {
+margin-left: 120px;
+}
+.standard-form p.actions {
+background: url('/images/bg_grey_dotted_h-line_3x1.png') 0 0 repeat-x;
+padding-top: 20px;
+margin-top: 20px;
+font-size: 13px;
+}
+.standard-form p {
+margin-left: 195px;
+_margin-left: 200px;
+margin-top: .25em;
+color: #333;
+}
+
+.join-linkedin .standard-form .actions button {
+	width: auto;
+	max-width: 183px;
+	
+}
+
+
+.btn-tertiary {
+background: #69A219;
+background: -moz-linear-gradient(top, #afd47b 0, #afd47b 1px, #8bc03f 1px, #69a219 100%);
+background: -o-linear-gradient(top, #afd47b 0, #afd47b 1px, #8bc03f 1px, #69a219 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #afd47b), color-stop(5%, #afd47b), color-stop(5%, #8bc03f), color-stop(100%, #69a219));
+background: linear-gradient(top, #afd47b 0%,#afd47b 1px,#8bc03f 1px,#69a219 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#AFD47B', endColorstr='#69A219',GradientType=0 );
+border-color: #693;
+color: #fff !important;
+font-weight: bold;
+white-space: nowrap;
+}
+.btn-primary, .btn-new-primary, .btn-secondary, .btn-new-secondary, .btn-tertiary, .btn-ternary, .btn-quaternary, .btn-action {
+border-width: 1px;
+border-style: solid;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+cursor: pointer;
+font-size: 12px;
+line-height: 1.35;
+margin: 0;
+overflow: visible;
+padding: 3px 10px 2px;
+text-decoration: none !important;
+vertical-align: top;
+width: auto;
+}
+
+.join-linkedin .standard-form.sided p.actions button p, .join-linkedin .standard-form.sided p.actions button div, .join-linkedin.existing .standard-form.sided p.actions button div {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	white-space: normal;
+	font-weight: inherit;
+}
+
+standard-form .progress-indicator, .ajax-form .progress-indicator {
+display: none;
+}
+.join-linkedin .standard-form #register-custom-nav {
+	
+	clear: both;
+	font-size: 13px;
+	line-height: 17px;
+	color: #333;
+	font-weight: normal;
+	font-style: inherit;
+	float:left;
+}
+
+join-linkedin .standard-form.sided p {
+margin-left: 105px;
+
+}
+.standard-form .progress-indicator, .ajax-form .progress-indicator {
+display: none;
+}
+.join-linkedin .standard-form .actions em {
+font-size: 130%;
+}

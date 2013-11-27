@@ -1,0 +1,211 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+margin-left: 0;
+margin-right: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-weight: inherit;
+font-style: inherit;
+font-size: 100%;
+font-family: inherit;
+vertical-align: baseline;
+-webkit-text-size-adjust: 100%;
+}
+
+
+/**************************** Boody CSS *******************************8 */
+
+
+.chrome-v5-responsive #body {
+margin-top: 80px;
+margin-bottom: 10px;
+}
+
+#body, .primary, .wrapper {
+clear: both;
+}
+
+#body, #footer {
+margin-left: auto;
+margin-right: auto;
+width: 980px;
+}
+
+#body {
+margin-top: 50px;
+margin-bottom: 10px;
+}
+
+#section-header, #page-title {
+margin: 0 10px 15px 10px;
+}
+
+#section-header h1, #section-header h1 a, #page-title h1, #page-title h1 a {
+font-size: 22px;
+font-weight: bold;
+line-height: 24px;
+color: #000;
+}
+
+h1 {
+display: block;
+font-size: 2em;
+-webkit-margin-before: 0.67em;
+-webkit-margin-after: 0.67em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+font-weight: bold;
+}
+
+
+#body .wrapper {
+padding: 0 10px;
+}
+
+#body, .primary, .wrapper {
+clear: both;
+}
+
+.os-win body, .os-win input, .os-win select, .os-win textarea, .os-win button {
+font-family: Arial,sans-serif;
+}
+
+ul.directory {
+overflow: hidden;
+zoom: 1;
+margin: 0 0 20px 0;
+list-style-type: disc;
+padding: 0;
+}
+
+ol, ul {
+list-style: none;
+}
+
+h1, h2, h3, h4, h5 {
+font-weight: bold;
+}
+
+body {
+font-size: 62.5%;
+line-height: 1.2;
+color: #000;
+}
+
+ul, menu, dir {
+display: block;
+list-style-type: disc;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 40px;
+}
+
+ul.directory li {
+width: 43%;
+float: left;
+font-size: 13px;
+margin: 0 0 10px 1.2em;
+}
+
+li {
+display: list-item;
+text-align: -webkit-match-parent;
+}
+
+ol, ul {
+list-style: none;
+}
+
+/***************** footer **********************/
+
+a:visited, #footer a:visited {
+color: #069;
+}
+
+
+
+#footer {
+font-size: 12px;
+line-height: 14px;
+color: #666;
+font-weight: normal;
+padding-top: 10px;
+padding-bottom: 10px;
+margin-left: auto;
+margin-right: auto;
+width: 974px;
+border-top: 1px solid #CCC;
+}
+
+#body, #footer {
+margin-left: auto;
+margin-right: auto;
+width: 980px;
+}
+
+#body:after, #footer:after {
+content: "";
+display: table;
+clear: both;
+}
+
+#footer .nav-footer {
+font-size: 13px;
+line-height: 17px;
+color: #333;
+font-weight: normal;
+}
+
+#footer .nav-footer:after {
+content: "";
+display: table;
+clear: both;
+}
+
+#footer .wrapper .nav-footer li {
+margin-bottom: 3px;
+}
+
+#footer .nav-footer>li, #footer #nav-legal>li {
+border-right: 1px solid #CCC;
+margin-right: 8px;
+padding-right: 8px;
+margin-top: 5px;
+margin-bottom: 5px;
+float: left;
+}
+
+.js #nav-utility-lang {
+visibility: visible;
+}
+
+#footer .nav-footer>li.last, #footer #nav-legal>li.last {
+border-right: none;
+}
+
+#footer #copyright {
+border-right: 1px solid #CCC;
+margin-right: 8px;
+padding-right: 8px;
+margin-top: 5px;
+margin-bottom: 5px;
+float: left;
+}
+
+#footer #copyright.guest span {
+float: left;
+height: 16px;
+width: 62px;
+text-indent: -119988px;
+overflow: hidden;
+text-align: left;
+margin-left: 0px;
+margin-right: 3px;
+padding-left: 0px;
+padding-right: 0px;
+margin-top: -2px;
+margin-bottom: -2px;
+background: url('images/logo_linkedin_med_grey_trans_64x16_v1.png') no-repeat scroll top left rgba(0, 0, 0, 0);
+}

@@ -1,0 +1,143 @@
+
+/*header css */
+
+#header .a11y-content{
+text-indent: -119988px;
+overflow: hidden;
+text-align: left;
+height: 0;
+}
+.global-header {
+	background: #333;
+	background-image: -webkit-linear-gradient(top, #555555 0%,#515151 18%,#373737 85%,#333333 100%);
+	background-image: -moz-linear-gradient(top, #555555 0%,#515151 18%,#373737 85%,#333333 100%);
+	background-image: -o-linear-gradient(top, #555555 0%,#515151 18%,#373737 85%,#333333 100%);
+	background-image: linear-gradient(top, #555555 0%,#515151 18%,#373737 85%,#333333 100%);
+	-webkit-box-shadow: 0 0 10px #333;
+	-moz-box-shadow: 0 0 10px #333;
+	box-shadow: 0 0 10px #333;
+	font-size: 13px;
+	line-height: 17px;
+	color: #333;
+	font-weight: normal;
+	z-index: 10001;
+	height: 42px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	font-size: 13px;
+	line-height: 17px;
+	color: #333;
+	font-weight: normal;
+}
+
+.nav-v5-2-header {
+background: none;
+}
+.nav-v5-2-header #top-header {
+background-color: #3f3f3f;
+background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #696969), color-stop(100%, #3f3f3f));
+background-image: -webkit-linear-gradient(top, #696969 0%,#3f3f3f 100%);
+background-image: -moz-linear-gradient(top, #696969 0%,#3f3f3f 100%);
+background-image: -o-linear-gradient(top, #696969 0%,#3f3f3f 100%);
+background-image: linear-gradient(top, #696969 0%,#3f3f3f 100%);
+height: 42px;
+}
+#top-header {
+z-index: 2;
+position: relative;
+}
+
+#top-header>.wrapper {
+	z-index: 3;
+}
+
+.global-header .wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	width: 974px;
+	position: relative;
+}
+
+#body, .primary, .wrapper {
+clear: both;
+}
+
+/*list items menu*/
+.global-header .nav.guest-nav {
+	float: right;
+}
+.global-header .nav .nav-item {
+	float: left;
+	line-height: 13px;
+	position: relative;
+}
+
+.global-header .nav .nav-link {
+	padding-top: 13px;
+	padding-bottom: 14px;
+	color: #0077b5;
+	text-decoration: none;
+	cursor: pointer;
+	display: block;
+}
+
+.nav-v5-2-header .nav .nav-link {
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #D7D7D7;
+}
+
+ol, ul {
+list-style: none;
+}
+
+.global-header .nav a {
+	color: #0077b5;
+	text-decoration: none;
+}
+
+.global-header .nav a:hover {
+	color: #0077b5;
+}
+
+a:visited{
+	color: #069;
+}
+a {
+	text-decoration: none;
+	color: #069;
+}
+
+
+/*logo*/
+#li-logo {
+background: url('images/logo_linkedin_flat_white_93x21.png') left center no-repeat;
+width: 93px;
+text-indent: -119988px;
+overflow: hidden;
+text-align: left;
+margin-top: 3px;
+display: block;
+height: 36px;
+position: relative;
+left: -1px;
+float: left;
+margin-left: 0px;
+margin-right: 5px;
+}
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-weight: inherit;
+font-style: inherit;
+font-size: 100%;
+/*font-family: inherit;*/
+vertical-align: baseline;
+-webkit-text-size-adjust: 100%;
+}
+

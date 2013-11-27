@@ -1,0 +1,260 @@
+<div id="header_wrapper">
+		<div id="the_header">
+			<div id="left_child">
+				<h1><a href="/" class="home"></a></h1>
+				<div id="search_form">
+					<%= form_for Advancesearch.new , :html=> { id: 'search_bar' } do |f|   %>
+						<div id="type_background">
+							<div class="styled_dropdown"></div>
+						</div>
+						<div id="search_box">
+							<%= f.text_field :keywords , :id => "search_keywords" , :placeholder=> "Search for people, jobs, companies and more..."%>
+						</div>
+						
+						<div id="advance_search">
+							<%= f.submit '', :name=>"search", :id=>"search", :class => "search_bar_button" %>
+							<a href="/advancesearches">Advanced</a>
+						</div>
+					<%end%>
+				</div>
+
+			</div>
+			<div id="right_child">
+				<ul id="notifications_area">
+
+
+					<li class="notification_item" id="messages">
+						<spam id="invitations_count"><%= current_user.pending_invited_by.count %></spam>
+
+						<a href="/invitations">
+							
+						</a>
+
+
+
+						<div class="activity_container" id="inbox">
+
+							<div class="activity_drop">
+								
+								<div id="inbox_invitations">
+									<div id="invitations_header">
+										<h3>Invitations (<%= current_user.pending_invited_by.count %>)</h3>
+									</div>
+									<div id="invitations_container">
+										<ol id="invitations">
+											<% current_user.pending_invited_by.each do |u| %>
+										      <li class="invitations_item">
+												<a href="#">
+													<%= image_tag u.image_url(:small).to_s %>
+												</a>
+												<div class="about_sender">
+													<p>
+														<%= link_to u.userfname+" "+u.userlname , u %>
+													</p>
+													<p>
+														Professional
+													</p>
+												</div>
+												<div id="action">
+													<%= button_to "Accept", friendship_path(u,:user_id => u.id), :method => :put , :class => "acceptold" %>
+	             									<%= button_to "Decline", friendship_path(u, :user_id =>  u.id), :method => :delete ,:class => "rejectold" %>
+             									</div>
+											  </li>
+										    <% end %>
+										</ol>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="notification_item" id="notifications"><a href="#"></a></li>
+					<li class="notification_item" id="add_connections"><a href="/invites/"></a></li>
+					<li id="profile_actions">
+						
+							
+							<%= link_to image_tag(current_user.image_url(:small).to_s), current_user ,:id=>"profile_pic" %>
+						
+						<div id="account_nav">
+							<div id="account_nav_options">
+								<div id="account_nav_header">
+									<h3>
+										Account & Settings
+										<span id="arrow"></span>
+									</h3>
+								</div>
+								<div id="account_nav_body">
+									<ul id="account_settings">
+										<li id="self" class="account_settings_link">
+											<span class="act_row">
+												<span id="pic" class="act_icon">
+													<%= image_tag current_user.image_url(:small).to_s %>
+												</span>
+												<span id="name" class="act_name">
+													
+													<%= link_to current_user.userfname+" "+current_user.userlname , current_user %>
+												</span>
+												<span id="signout" class="act_action">
+													<%= link_to "Sign Out", '/users/sign_out'%>
+												</span>
+											</span>
+										</li>
+										<li class="account_settings_link">
+											<a href="#">
+												<span class="act_row">
+													<span class="act_icon">
+														<span id="upgrade" class="back_icons"></span>
+													</span>
+													<span class="act_name">
+														Account: Basic
+													</span>
+													<span class="act_action">
+														Upgrade
+													</span>
+												</span>
+											</a>
+										</li>
+										<li class="account_settings_link">
+											<a href="#">
+												<span class="act_row">
+													<span class="act_icon">
+														<span id="job" class="back_icons"></span>
+													</span>
+													<span class="act_name">
+														Job Posting
+													</span>
+													<span class="act_action">
+														Manage
+													</span>
+												</span>
+											</a>
+										</li>
+										<li class="account_settings_link">
+											<a href="#">
+												<span class="act_row">
+													<span class="act_icon">
+														<span id="language" class="back_icons"></span>
+													</span>
+													<span class="act_name">
+														Language
+													</span>
+													<span class="act_action">
+														Change
+													</span>
+												</span>
+											</a>
+										</li>
+										<li class="account_settings_link">
+											<a href="#">
+												<span class="act_row">
+													<span class="act_icon">
+														<span id="settings" class="back_icons"></span>
+													</span>
+													<span class="act_name">
+														Privacy & Settings
+													</span>
+													<span class="act_action">
+														Review
+													</span>
+												</span>
+											</a>
+										</li>
+										<li class="account_settings_link">
+											<a href="#">
+												<span class="act_row">
+													<span class="act_icon">
+														<span id="help" class="back_icons"></span>
+													</span>
+													<span class="act_name">
+														Help Center
+													</span>
+													<span class="act_action">
+														Get Help
+													</span>
+												</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div id="main_nav_wrapper">
+		<div id="main_nav">
+			<ul id="user_nav">
+				<li class="nav_item">
+					<%= link_to 'Home', '/home/index' , :class=>"nav-link" %>
+				</li>
+				<li id="profile_nav" class="nav_item">
+					
+					<%= link_to "Profile" , current_user , :class=> "nav_link" , :id=> "Profile" %>
+
+					<ul id="profile_sub_nav" class="sub_nav">
+						<li class="nav_item">
+							<%= link_to "Edit Profile", '/users/edit'  , :class=>"nav-link"%> 
+						</li>
+						<li class="nav_item">
+							<a href="#">Who's Viewed Your Profile</a>
+						</li>
+					</ul>
+				</li>
+				<li id="networks_nav" class="nav_item">
+					<a href="#" class="nav_link">Network</a>
+					<ul id="networks_sub_nav" class="sub_nav">
+						<li class="nav_item">
+							<a href="/contacts/">Contacts</a>
+						</li>
+						<li class="nav_item">
+							<a href="/invites/">Add Connections</a>
+						</li>
+						<li class="nav_item">
+							<a href="/alumnisearches/">Find Alumni</a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav_item">
+					<a href="#" class="nav_link">Jobs</a>
+				</li>
+				<li id="interests_nav" class="nav_item">
+					<a href="#" class="nav_link">Interests</a>
+					<ul id="interests_sub_nav" class="sub_nav">
+						<li class="nav_item">
+							<a href="#">Companies</a>
+						</li>
+						<li class="nav_item">
+							<a href="#">Groups</a>
+						</li>
+						<li class="nav_item">
+							<a href="#">Influencers</a>
+						</li>
+						<li class="nav_item">
+							<a href="#">Education</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="business_nav">
+				<li id="services_nav" class="nav_item">
+					<a href="#" class="nav_link">Business Services</a>
+					<ul id="services_sub_nav" class="sub_nav">
+						<li class="nav_item">
+							<a href="#">Post a Job</a>
+						</li>
+						<li class="nav_item">
+							<a href="#">Talent Solutions</a>
+						</li>
+						<li class="nav_item">
+							<a href="#">Advertise</a>
+						</li>
+					</ul>
+				</li>
+				<li id="last" class="nav_item">
+					<a href="#" class="nav_link">Upgrade</a>
+				</li>
+			</ul>
+		</div>
+	</div>

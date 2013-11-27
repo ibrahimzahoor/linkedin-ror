@@ -1,0 +1,130 @@
+<link href="/stylesheets/sign-in.css" rel="stylesheet">
+<link href="/stylesheets/main-header.css" rel="stylesheet">
+<script src="/javascripts/sign-in.js"></script>
+<% provide(:title, 'Sign In') %>
+
+<div id="header" class="global-header responsive-header nav-v5-2-header responsive-1" role="banner">
+    <div id="top-header">
+      <div class="wrapper">
+        <h2 class="logo-container">
+          <a  href="/users/sign_up" class="logo" id="li-logo">LinkedIn Home</a>
+        </h2>
+  
+        <ul class="nav main-nav guest-nav" role="navigation">
+          <li class="nav-item">
+            <a  href="/home/whatislinkedin" class="nav-link">What is LinkedIn?</a>
+          </li>
+          
+          <li class="nav-item">
+            <a  href="/register" class="nav-link" rel="nofollow">Join Today</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/users/sign_in" class="nav-link" rel="nofollow">Sign In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+        <div class="a11y-content">
+      <a name="a11y-content" tabindex="0" id="a11y-content-link">Main content starts below.</a>
+    </div>
+  </div>
+
+	
+    <div id="global-error">
+				<div class="alert error">
+					<p><strong id="global"></strong></p>
+				</div>
+	</div>
+
+
+	<div id="body" class="" role="main">
+		<div id="page-title">
+        	<h1>Sign in to LinkedIn</h1>
+        </div>
+		
+        <div class="wrapper hp-nus-wrapper">
+			<div id="global-alert-queue"></div>
+			<div id="global-error">
+		</div>
+
+        <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  <%- end -%>
+		
+        <div id="main" class="signin" >
+			<div id="cookieDisabled" style="display: none;">Make sure you have cookies and Javascript enabled in your browser before signing in.</div>
+            
+            
+            
+			<%= form_for(resource,:as => resource_name , :validates => true  , :id => "sign_in"  , :url => session_path(resource_name)) do |f| %>
+
+
+
+            
+
+            <ul>
+            	<li>
+                <label for="session_key-login" >Email address:</label>
+                
+                <div class="fieldgroup">
+                	<span class="error" id="email-signin-error"></span>
+                
+                	<%= f.text_field :email  ,:id => "email-signin" %>
+				</div>
+          		</li>
+				<li>
+            		<label for="session_password-login" >Password:</label>
+            		<div class="fieldgroup">
+                		<span class="error" id="password-signin-error"></span>
+                		
+                    	<%= f.password_field :password ,:id => "password-signin" %>
+                        
+                  		<span><%= link_to "Forgot your password?", new_password_path(resource_name) ,:class => "nav-link" , :id => "forgot-password" %></span>
+
+
+            		</div>
+
+            		
+          </li>
+        
+        <li class="button">
+          <%= f.submit "Sign in",:id => "btn-signin" ,  :class => "btn large primary" %>
+          <span> or <a href="/register" tracking="signin_join" class="nav-link">Join LinkedIn</a></span>
+        
+
+
+        </li>
+
+
+
+
+      </ul>
+
+      <% end %>
+  
+      
+     
+        
+          
+          </form>
+
+</div>
+</div>
+</div>
+
+	<div id="footer">
+		<div class="wrapper">
+			<p id="copyright" class="guest"><span>LinkedIn Corporation</span>© 2013</p>
+			
+			<ul id="nav-legal">
+				<li><a href="/home/agreement">User Agreement</a></li>
+				<li><a href="/home/default">Privacy Policy</a></li>
+				<li><a href="/home/default">Community Guidelines</a></li>
+				<li><a href="/home/default">Cookie Policy</a></li>
+				<li class="last"><a href="/home/default">Copyright Policy</a></li>
+			</ul>
+		</div>
+	</div>
+
+

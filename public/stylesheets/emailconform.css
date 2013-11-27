@@ -1,0 +1,337 @@
+#main {
+zoom: 1;
+}
+
+
+.progress-container {
+overflow: hidden;
+zoom: 1;
+border-bottom: 1px solid #CCC;
+padding-bottom: 6px;
+margin-bottom: 18px;
+}
+
+#main h1 {
+font-weight: normal;
+font-size: 115%;
+}
+.progress-container h1 {
+width: 75%;
+float: left;
+}
+h1 {
+font-size: 180%;
+color: #39C;
+}
+
+.progress-container p.progress {
+float: right;
+margin-top: 1px;
+width: 22%;
+}
+.progress-container .progress {
+float: right;
+overflow: hidden;
+zoom: 1;
+}
+
+
+.progress-container .summary {
+font-size: 85%;
+float: left;
+}
+
+strong {
+font-weight: bold;
+}
+.progress-container .progress-meter {
+float: right;
+}
+.progress-meter {
+border: 1px solid #666;
+overflow: hidden;
+background: transparent url('/images/sprite_progress_meter_v1.png') repeat-x 0 0;
+width: 100px;
+}
+.progress-meter, .progress-meter .has-progress, .progress-meter .no-progress {
+height: 12px;
+display: block;
+}
+
+.progress-meter .has-progress {
+border-right: 1px solid #666;
+background: transparent url('/images/sprite_progress_meter_v1.png') repeat-x 0 -50px;
+}
+.progress-meter, .progress-meter .has-progress, .progress-meter .no-progress {
+height: 12px;
+display: block;
+}
+.progress-container p.progress {
+float: right;
+margin-top: 1px;
+width: 22%;
+}
+.progress-container .progress {
+float: right;
+overflow: hidden;
+zoom: 1;
+}
+.import-abook-contacts .abook-import {
+width: 550px;
+margin: auto;
+}
+.leo-module.mod-action {
+background: #DDF0F8;
+border: 1px solid #9ACCE6;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+padding: 0;
+}
+.leo-module {
+margin-bottom: 20px;
+padding: 0;
+width: 100%;
+}
+.leo-module.mod-action .header {
+margin: 0;
+padding: 5px 10px;
+color: #069;
+}
+.leo-module .header {
+-moz-border-radius-topleft: 6px;
+-moz-border-radius-topright: 6px;
+-webkit-border-top-left-radius: 6px;
+-webkit-border-top-right-radius: 6px;
+border-top-left-radius: 6px;
+border-top-right-radius: 6px;
+padding: 5px 10px;
+}
+.leo-module .header h1, .leo-module .header h2, .leo-module .header h3, .leo-module .header h4, .leo-module .header h5 {
+margin: 0;
+font-size: 13px;
+font-weight: bold;
+}
+
+.leo-module.mod-action .content {
+background: #DDF0F8;
+border: none;
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+border-radius: 0;
+color: #333;
+overflow: hidden;
+padding: 0 15px 20px 15px;
+zoom: 1;
+}
+.leo-module .content {
+background: white;
+border: 1px solid #DDD;
+border-width: 0 1px 1px;
+-moz-border-radius-bottomleft: 6px;
+-moz-border-radius-bottomright: 6px;
+-webkit-border-bottom-left-radius: 6px;
+-webkit-border-bottom-right-radius: 6px;
+border-bottom-left-radius: 6px;
+border-bottom-right-radius: 6px;
+padding: 6px 10px 8px 10px;
+zoom: 1;
+}
+.import-abook-contacts .abook-import p.introduction {
+font-size: 115%;
+margin: 5px 10px 15px 10px;
+}
+
+.import-abook-contacts .standard-form.sided {
+margin: 0 10px;
+}
+.standard-form.sided {
+margin: 20px 10px;
+}
+.standard-form {
+margin: 20px 40px;
+}
+.import-abook-contacts .standard-form.sided fieldset {
+background: none;
+}
+
+.import-abook-contacts .standard-form.sided legend {
+display: none;
+}
+.standard-form legend {
+font-size: 180%;
+color: #333;
+background-color: white;
+padding-right: 10px;
+_margin-left: -7px;
+}
+.import-abook-contacts .standard-form.sided ul {
+padding-top: 0;
+}
+.standard-form ul {
+margin: 0;
+padding-top: 10px;
+list-style-type: none;
+}
+ol, ul {
+list-style: none;
+}
+
+#address-book-import-form li.email-address, #address-book-import-form #pswd-div {
+zoom: 1;
+}
+.standard-form li, .standard-form fieldset.details li {
+margin-bottom: 10px;
+}
+
+.import-abook-contacts .standard-form.sided ul label {
+width: 125px;
+}
+.standard-form.sided label, .standard-form.sided li fieldset legend span, .standard-form.sided li fieldset.details fieldset legend {
+width: 110px;
+}
+.standard-form label, .standard-form li fieldset legend span, .standard-form li fieldset.details fieldset legend {
+font-size: 13px;
+color: #333;
+background-color: transparent;
+font-weight: bold;
+display: block;
+float: left;
+text-align: right;
+width: 185px;
+margin-right: 10px;
+}
+.import-abook-contacts .email-address .fieldgroup {
+}
+.standard-form.sided .fieldgroup {
+_margin-left: 123px;
+}
+.standard-form.sided ul ul, .standard-form.sided .fieldgroup {
+margin-left: 120px;
+_margin-left: 117px;
+}
+.standard-form ul ul, .standard-form .fieldgroup {
+margin: 0 0 0 195px;
+_margin-left: 198px;
+padding: 0;
+}
+.form-row {
+display: -moz-inline-stack;
+display: inline-block;
+vertical-align: middle;
+zoom: 1;
+position: relative;
+}
+.import-abook-contacts span.error {
+font-weight: bold;
+color: #900;
+}
+.standard-form .error {
+font-size: 12px;
+color: #900;
+font-weight: bold;
+}
+span.error {
+font-weight: bold;
+color: #900;
+}
+
+#email-nWMIForm {
+margin-right: 4px;
+}
+.webmail-upload .email-address input, #email-nWMIForm {
+float: left;
+}
+.import-abook-contacts .standard-form.sided ul input {
+width: 285px;
+}
+.standard-form input, .standard-form select, .standard-form textarea {
+font-size: 13px;
+}
+form ul input, form ul textarea {
+border: 1px solid #999;
+outline: none;
+padding: 2px 3px;
+background-color: white;
+}
+
+#address-book-import-form li.email-address, #address-book-import-form #pswd-div {
+zoom: 1;
+}
+.standard-form li, .standard-form fieldset.details li {
+margin-bottom: 10px;
+}
+.import-abook-contacts .standard-form.sided p {
+margin-left: 135px;
+}
+.standard-form.sided p {
+margin-left: 120px;
+}
+.standard-form p {
+margin-left: 195px;
+_margin-left: 200px;
+margin-top: .25em;
+color: #333;
+}
+
+#resolve-btn {
+font-size: 13px;
+}
+.standard-form input, .standard-form select, .standard-form textarea {
+font-size: 13px;
+}
+.os-linux body, .os-linux input, .os-linux select, .os-linux textarea, .os-linux button {
+font-family: Helvetica,FreeSans,"Liberation Sans",Helmet,Arial,sans-serif;
+}
+.btn-primary, .btn-menu-open.btn-primary, .btn-split.btn-primary:hover {
+background: #0571A6;
+background: -moz-linear-gradient(top, #73AEC9 0, #73AEC9 1px, #338AB0 1px, #0571A6 100%);
+background: -o-linear-gradient(top, #73AEC9 0, #73AEC9 1px, #338AB0 1px, #0571A6 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #73AEC9), color-stop(5%, #73AEC9), color-stop(5%, #338AB0), color-stop(100%, #0571A6));
+background: linear-gradient(top, #73AEC9 0%,#73AEC9 1px,#338AB0 1px,#0571A6 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#338AB0', endColorstr='#0571A6',GradientType=0 );
+border-color: #045A8B;
+color: white !important;
+}
+.import-abook-contacts .standard-form.sided p {
+margin-left: 135px;
+}
+.standard-form.sided p {
+margin-left: 120px;
+}
+.standard-form p.example, .standard-form p.tip, .standard-form p.note {
+font-size: 11px;
+color: #666;
+}
+.standard-form p {
+margin-left: 195px;
+_margin-left: 200px;
+margin-top: .25em;
+color: #333;
+}
+
+.import-abook-contacts .skip {
+width: 550px;
+margin: 15px auto 40px auto;
+text-align: right;
+font-size: 115%;
+}
+
+a {
+text-decoration: none;
+color: #069;
+}
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-weight: inherit;
+font-style: inherit;
+font-size: 100%;
+font-family: inherit;
+vertical-align: baseline;
+-webkit-text-size-adjust: 100%;
+}

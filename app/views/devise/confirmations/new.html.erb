@@ -1,0 +1,122 @@
+<link href="/stylesheets/main-header.css" rel="stylesheet">
+<link href="/stylesheets/join.css" rel="stylesheet">
+<link href="/stylesheets/emailconform.css" rel="stylesheet">
+
+<script src="/javascripts/join.js"></script>
+
+
+
+	<div id="header" class="guest">
+		<div class="wrapper">
+			<div id="nav-primary">
+				<div class="wrapper">
+					<div class="logo" id="logo-linkedin">
+						<img src="/images/logo_linkedin_92x22.png" width="92" height="22" alt="LinkedIn">
+					</div>
+                    
+                    <ul class="menu">
+						<li id="nav-primary-auth">
+                            Already on LinkedIn? <%= link_to "users/sign_in" %>
+					  </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    
+    <div id="body">
+		<div class="wrapper">
+
+			
+			<div id="global-error">
+				<div class="alert error">
+					<p><strong id="global">Please correct the marked field(s) below. </strong></p>
+				</div>
+			</div>
+
+			<div id="main" class="import-abook-contacts">
+
+				<div class="progress-container">
+			        <h1>
+			              Grow your network on LinkedIn
+			        </h1>
+        			
+
+        			<p class="progress">
+          				<span class="summary">Step <strong>2</strong> of <strong>3</strong></span>
+            			<span class="progress-meter" title="25% Complete"><span class="has-progress" style="width:66.7%"></span></span>
+        			</p>
+  				</div>
+  				<%#= devise_error_messages! %>
+		    	<div class="leo-module mod-action abook-import" id="module-id2">
+        			<div class="header"><h3></h3></div>
+      					<div class="content">
+						    <p class="introduction">
+						      Get started by adding your email address.
+						    </p>
+							
+
+							<%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post, :class=>"standard-form sided", :id=>"address-book-import-form" }) do |f| %>
+
+       							<fieldset class="authenticate">
+							    	<legend>
+							    		<strong>Enter your email credentials</strong>
+							    	</legend>
+
+        							<div class="import-msg" id="import-msg"></div>
+
+								      <ul>
+								        <li class="email-address">
+								            <label for="email-nWMIForm" id="label-abook-imprt-email">Your email:</label>
+								            <div class="fieldgroup">
+								              <div class="form-row">
+								                <span class="system-error"><span class="error" id="email-nWMIForm-error"></span></span>
+								                	<%= f.email_field :email , :id=>"email-nWMIForm"%>
+								                <span id="wmi_progress"></span>
+								                <span id="zeppelin-loading" role="presentation"></span>
+								              </div>
+								            </div>
+								        </li>
+								      
+								      </ul>
+								      <p class="add-connections">
+								        <span><input type="submit" name="" value="Continue" id="resolve-btn" class="btn-primary"></span>
+
+								      </p>
+
+
+							              <p class="note">
+							                We will not store your password or email anyone without your permission.
+							              </p>
+							        <div id="disclaimer_msg" style="display: none; ">
+							          <p class="note">
+							            By clicking continue, however, you give us permission to send it to a partner for the sole purpose of checking your e-mail contacts.
+							            <a href="#">Learn More</a>
+							          </p>
+							        </div>
+							    </fieldset>
+          					<%end%>
+						</div>
+					</div>
+    				
+    				<p class="skip">
+			            <a id="skipButton" href="/home/step3">
+			              Skip this step
+			            </a>
+			            »
+         			</p> 
+			</div>
+		</div>
+	</div>
+	
+    <div id="footer">
+ 		<div class="wrapper">
+ 			<div id="legal">
+ 				<p id="copyright">LinkedIn Corporation &copy; 2013</p>
+ 				<p id="terms-of-use">
+				 Commercial use of this site without express authorization is prohibited.
+ 				</p>
+ 			</div>
+ 		</div>
+	</div>		

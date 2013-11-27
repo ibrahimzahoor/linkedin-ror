@@ -1,0 +1,143 @@
+<% @posts.each do |post| %>
+            
+                <% if current_user.friend_with? post.user %>
+                  <li>
+                      <%= link_to post.user.userfname + " " + post.user.userlname , post.user , :class=>"name_style"%> 
+                      <span class="content"><%= post.content %></span>
+
+                      <% if post.image.present? %>
+                        <%= image_tag post.image_url.to_s , :class=>"post_image"%>
+                      <%end%>
+
+                      <span class="timestamp">
+                        Posted <%= time_ago_in_words(post.created_at) %> ago.
+                      </span>
+                      <br/>
+
+                      <div class="comments">
+                        <% post.comments.each do |c| %>
+
+                          <div class="abstract">
+                            <span class="commenter_photo">
+                              <%= image_tag c.user.image_url(:small).to_s , :class => "commenter_pic"%>
+                            </span>
+
+                            <span class ="commentview">
+                              <div class="link">
+                                <%= link_to c.user.userfname + " " + c.user.userlname , c.user , :class=>""%>
+                              </div>
+                              <span class="commentsmall">
+                                 <%= c.body %>
+                              </span>
+                            </span>
+                          </div>
+
+                          <span class="timestamp2">
+                            Posted <%= time_ago_in_words(c.created_at) %> ago.
+                          </span>
+                        <% end %>
+                      </div>
+
+                      <%= form_for [post, Comment.new] do |f| %>
+                        <p class="new">
+                          <%= f.text_area :body, :class=>"newcomment" %>
+                          <%= f.submit "Add comment" ,:class=>"cselect" %>
+                        </p>
+                      <% end %>
+                    </li>
+                 
+                 <% elsif current_user == post.user  %>
+                  <li>
+                      <%= link_to post.user.userfname + " " + post.user.userlname , post.user , :class=>"name_style"%> 
+                      <span class="content"><%= post.content %></span>
+
+                      <% if post.image.present? %>
+                        <%= image_tag post.image_url.to_s , :class=>"post_image"%>
+                      <%end%>
+
+                      <span class="timestamp">
+                        Posted <%= time_ago_in_words(post.created_at) %> ago.
+                      </span>
+                      <br/>
+
+                      <div class="comments">
+                        <% post.comments.each do |c| %>
+
+                          <div class="abstract">
+                            <span class="commenter_photo">
+                              <%= image_tag c.user.image_url(:small).to_s , :class => "commenter_pic"%>
+                            </span>
+
+                            <span class ="commentview">
+                              <div class="link">
+                                <%= link_to c.user.userfname + " " + c.user.userlname , c.user , :class=>""%>
+                              </div>
+                              <span class="commentsmall">
+                                 <%= c.body %>
+                              </span>
+                            </span>
+                          </div>
+
+                          <span class="timestamp2">
+                            Posted <%= time_ago_in_words(c.created_at) %> ago.
+                          </span>
+                        <% end %>
+                      </div>
+
+                      <%= form_for [post, Comment.new] do |f| %>
+                        <p class="new">
+                          <%= f.text_area :body, :class=>"newcomment" %>
+                          <%= f.submit "Add comment" ,:class=>"cselect" %>
+                        </p>
+                      <% end %>
+                    </li>
+
+                <% elsif post.public=="Public" %>
+                <li>
+                      <%= link_to post.user.userfname + " " + post.user.userlname , @user , :class=>"name_style"%> 
+                      <span class="content"><%= post.content %></span>
+
+                      <% if post.image.present? %>
+                        <%= image_tag post.image_url.to_s , :class=>"post_image"%>
+                      <%end%>
+
+                      <span class="timestamp">
+                        Posted <%= time_ago_in_words(post.created_at) %> ago.
+                      </span>
+                      <br/>
+
+                      <div class="comments">
+                        <% post.comments.each do |c| %>
+
+                          <div class="abstract">
+                            <span class="commenter_photo">
+                              <%= image_tag c.user.image_url(:small).to_s , :class => "commenter_pic"%>
+                            </span>
+
+                            <span class ="commentview">
+                              <div class="link">
+                                <%= link_to c.user.userfname + " " + c.user.userlname , c.user , :class=>""%>
+                              </div>
+                              <span class="commentsmall">
+                                 <%= c.body %>
+                              </span>
+                            </span>
+                          </div>
+
+                          <span class="timestamp2">
+                            Posted <%= time_ago_in_words(c.created_at) %> ago.
+                          </span>
+                        <% end %>
+                      </div>
+
+                      <%= form_for [post, Comment.new] do |f| %>
+                        <p class="new">
+                          <%= f.text_area :body, :class=>"newcomment" %>
+                          <%= f.submit "Add comment" ,:class=>"cselect" %>
+                        </p>
+                      <% end %>
+                    </li>
+  
+                  <%end%>
+                <%end%>
+            
