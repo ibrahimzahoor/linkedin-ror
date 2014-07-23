@@ -1,18 +1,20 @@
-# Rails Bootstrap Base Application
+# Linked In Clone using Rails 3.2.3 & Ruby 1.9.3
  
 ## Overview
 
 Rails Bootstrap Base App was made as a quick way to DRY up the development process for projects needing some basic web application functionality. It includes a basic design, authentication, authorization and some seed data. It also started as an attempt to integrate Twitter's Bootstrap HTML5 kit with Rails. The goal would be to eventually extract the entire project as a gem.
+
+This applicatoin is developed by [Hassan Akram](https://github.com/hassan akram) and [Ibrahim Zahoor](https://github.com/ibrahimzahoor). It includes selected features of [LinkedIn](https://linkedin.com). We used a variety of gems for different tasks (Refference is given below).
 
 ## Features
 
 * Layout - Twitter's Bootstrap, [twitter/bootstrap](https://github.com/twitter/bootstrap)
 * Authentication - Devise, [platformatec/devise](https://github.com/plataformatec/devise)
 * Authentication Token - uses the Devise auth token feature, for API access
-* Authorization - Canan, [ryanb/cancan](https://github.com/ryanb/cancan)
-* Feedback - Simple feedback application to test API and secure pages
-* Seed data - Seed data to kick start users for authentication and authorization.
-            
+* Friendship Model - amistad [Amistad Gem](https://github.com/raw1z/amistad)
+* Facebook Authentication - using [omniauth](https://github.com/intridea/omniauth)
+* Heroku Deployement - [Heroku gem](https://github.com/heroku/heroku)
+
 
 ## Installation
 
@@ -23,22 +25,23 @@ Rails Bootstrap Base App was made as a quick way to DRY up the development proce
 * rake db:seed
 * rails s
 
-## Usage
-* open in browser
-* click on secure
-* login using "admin@domain.com:secret", "user@domain.com:secret" or register
-* Get auth token from API 
 
-```
-curl -X GET "http://localhost:3000/users/1.json" -u "admin@domain.com:secret"
-```
 
-* Then use auth token to make secure request rather than using username and password each time. Auth token will remain static unless changed in the user model.
+##    License
 
-```
-curl -X GET "http://localhost:3000/feedbacks/1.json?auth_token=<authentication_token>"
-```
+Copyright (c) 2014 Ibrahim Zahoor, Hassan Akram, Bilal Ali
 
-## Todo
+  My HealthFile is licensed under the [MIT license.](http://opensource.org/licenses/MIT)
 
-See issues - [rails-bootstrap-base-app/issues](https://github.com/kevbaker/rails-bootstrap-base-app/issues)
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
